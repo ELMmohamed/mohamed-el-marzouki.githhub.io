@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230a0e12'/%3E%3Ctext%20x='50'%20y='72'%20font-family='monospace'%20font-size='62'%20font-weight='700'%20fill='%2300e5a0'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%23070b0e'/%3E%3Ccircle%20cx='50'%20cy='50'%20r='31'%20fill='none'%20stroke='%2300e5a0'%20stroke-width='4'%20opacity='0.45'/%3E%3Cg%20stroke='%2300e5a0'%20stroke-width='4'%20stroke-linecap='round'%3E%3Cpath%20d='M50%2010V21'/%3E%3Cpath%20d='M50%2079V90'/%3E%3Cpath%20d='M10%2050H21'/%3E%3Cpath%20d='M79%2050H90'/%3E%3C/g%3E%3Ctext%20x='50'%20y='66'%20font-family='monospace'%20font-size='44'%20font-weight='700'%20fill='%2300e5a0'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
     --bg:#080b0e; --panel:#0d1217; --panel-2:#10161c; --ink:#e8eef0; --dim:#8a98a0; --faint:#566169;
@@ -104,7 +104,9 @@
   @media(max-width:560px){ .mods{grid-template-columns:1fr;} }
   .mod .ml{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pc,var(--accent));margin-bottom:9px;}
   .mod .mi{display:flex;flex-wrap:wrap;gap:6px;}
-  .mod .mi span{font-family:var(--mono);font-size:11px;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 10px;background:var(--panel-2);transition:.2s;}
+  .mod .mi span{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 10px;background:var(--panel-2);transition:.2s;}
+  .mod .mi span img{width:14px;height:14px;object-fit:contain;opacity:.9;}
+  [data-theme="light"] .mod .mi span img{filter:invert(1) brightness(.35);}
   .mod .mi span:hover{border-color:var(--pc,var(--accent));color:var(--pc,var(--accent));transform:translateY(-2px);}
 
   /* mission cards (projects) */
@@ -175,6 +177,18 @@
   .foot{border-top:1px solid var(--line);margin-top:20px;padding:16px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;}
   .foot b{color:var(--dim);}
 
+  /* custom cursor — mission control reticle */
+  @media (hover:hover) and (pointer:fine){
+    body{cursor:none;}
+    a,button,input,.mc,.tle,.lb-thumbs button,.comms a,.svc .s,[data-lb-close],.lb-nav{cursor:none;}
+  }
+  .cur-dot,.cur-ring{position:fixed;top:0;left:0;z-index:300;pointer-events:none;will-change:transform;}
+  .cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
+  .cur-ring{width:28px;height:28px;margin:-14px 0 0 -14px;border:1.5px solid color-mix(in oklch,var(--accent) 60%,transparent);border-radius:50%;transition:width .18s,height .18s,margin .18s,border-color .18s,background .18s;}
+  .cur-ring.lg{width:52px;height:52px;margin:-26px 0 0 -26px;background:color-mix(in oklch,var(--accent) 9%,transparent);border-color:var(--accent);}
+  .cur-ring.dn{width:20px;height:20px;margin:-10px 0 0 -10px;}
+  @media (hover:none),(pointer:coarse){ .cur-dot,.cur-ring{display:none!important;} }
+
   /* boot overlay — cinematic */
   .boot{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;font-family:var(--mono);transition:opacity .6s ease, transform .6s ease;overflow:hidden;}
   .boot.done{opacity:0;transform:scale(1.04);pointer-events:none;}
@@ -185,7 +199,26 @@
   .boot .ring.r2{width:230px;height:230px;animation:bpulse 2.6s ease-out infinite 1.3s;}
   @keyframes bspin{to{transform:translate(-50%,-50%) rotate(360deg);}}
   @keyframes bpulse{0%{width:170px;height:170px;opacity:.7;}100%{width:520px;height:520px;opacity:0;}}
-  .boot .mono-mark{position:relative;width:118px;height:118px;display:grid;place-items:center;border:1px solid color-mix(in oklch,var(--accent) 40%,var(--line));border-radius:24px;background:color-mix(in oklch,var(--panel) 70%,transparent);box-shadow:0 0 60px -20px var(--accent);}
+  .boot .mono-mark{position:relative;width:118px;height:118px;display:grid;place-items:center;border:1px solid color-mix(in oklch,var(--accent) 40%,var(--line));border-radius:24px;background:color-mix(in oklch,var(--panel) 70%,transparent);box-shadow:0 0 60px -20px var(--accent);animation:markin .8s cubic-bezier(.19,1,.22,1) both;}
+  @keyframes markin{from{opacity:0;transform:scale(.55) rotate(-14deg);}to{opacity:1;transform:none;}}
+  .boot .bmark{position:relative;width:150px;height:150px;display:grid;place-items:center;}
+  .boot .bmark svg{width:124px;height:124px;overflow:visible;}
+  .boot .bmark path{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300;filter:drop-shadow(0 0 10px color-mix(in oklch,var(--accent) 70%,transparent));animation:bdraw 1.5s cubic-bezier(.65,0,.35,1) forwards .25s;}
+  @keyframes bdraw{to{stroke-dashoffset:0;}}
+  .boot .bscan{position:absolute;left:6%;right:6%;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent);opacity:.75;animation:bsweep 1.9s ease-in-out infinite;}
+  @keyframes bsweep{0%,100%{top:16%;}50%{top:84%;}}
+  @media (prefers-reduced-motion: reduce){ .boot .bmark path{animation:none;stroke-dashoffset:0;} .boot .bscan{display:none;} .boot .bmark{animation:none;} }
+  .boot .bc{position:absolute;width:34px;height:34px;border:2px solid color-mix(in oklch,var(--accent) 45%,transparent);z-index:2;opacity:0;animation:bcin .6s ease forwards .2s;}
+  .boot .bc.tl{top:26px;left:26px;border-right:0;border-bottom:0;}
+  .boot .bc.tr{top:26px;right:26px;border-left:0;border-bottom:0;}
+  .boot .bc.bl{bottom:26px;left:26px;border-right:0;border-top:0;}
+  .boot .bc.br{bottom:26px;right:26px;border-left:0;border-top:0;}
+  @keyframes bcin{to{opacity:1;}}
+  .boot .bstat{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);min-height:14px;}
+  .boot .bonline{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:clamp(32px,6vw,72px);letter-spacing:.06em;color:var(--accent);text-shadow:0 0 36px color-mix(in oklch,var(--accent) 70%,transparent);opacity:0;}
+  .boot.online .bonline{animation:onflash .7s ease forwards;}
+  .boot.online .bmark,.boot.online .pct,.boot.online .logo,.boot.online .bstat,.boot.online .checks,.boot.online .pbar{opacity:0;transition:opacity .25s;}
+  @keyframes onflash{0%{opacity:0;transform:scale(.92);}22%{opacity:1;}70%{opacity:1;transform:scale(1);}100%{opacity:1;}}
   .boot .mono-mark span{font-family:var(--sans);font-weight:700;font-size:60px;color:var(--accent);text-shadow:0 0 24px color-mix(in oklch,var(--accent) 60%,transparent);}
   .boot .mono-mark .scan{position:absolute;left:0;right:0;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:bscan 1.8s ease-in-out infinite;}
   @keyframes bscan{0%,100%{top:6%;}50%{top:92%;}}
@@ -328,15 +361,22 @@
 </style>
 </head>
 <body>
+<div class="cur-dot" id="curDot"></div><div class="cur-ring" id="curRing"></div>
 
 <!-- boot -->
 <div class="boot" id="boot">
   <div class="radar"></div><div class="ring r1"></div><div class="ring r2"></div>
-  <div class="mono-mark"><span>M</span><div class="scan"></div></div>
+  <span class="bc tl"></span><span class="bc tr"></span><span class="bc bl"></span><span class="bc br"></span>
+  <div class="bmark">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M16 84 L16 24 L50 60 L84 24 L84 84"/></svg>
+    <div class="bscan"></div>
+  </div>
   <div class="pct"><span id="bootNum">0</span><span class="u">%</span></div>
   <div class="logo">M.A. EL MARZOUKI · MISSION CONTROL OS</div>
+  <div class="bstat" id="bstat">Initialisation…</div>
   <div class="checks" id="bootChecks"></div>
   <div class="pbar"><i id="bootBar"></i></div>
+  <div class="bonline" id="bonline">SYSTEM ONLINE</div>
 </div>
 
 <!-- telemetry bar -->
@@ -494,10 +534,10 @@
       </div>
       <div class="tags" style="display:none"></div>
       <div class="mods" style="--pc:var(--c-lime);margin-top:22px">
-        <div class="mod"><div class="ml">Langages</div><div class="mi"><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>PHP</span><span>Java</span><span>C#</span><span>Kotlin</span><span>Bash</span></div></div>
-        <div class="mod"><div class="ml">Front-end</div><div class="mi"><span>React</span><span>Next.js</span><span>Vue.js</span><span>HTML</span><span>CSS</span></div></div>
-        <div class="mod"><div class="ml">Back-end</div><div class="mi"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Laravel</span><span>Symfony</span><span>Django</span></div></div>
-        <div class="mod"><div class="ml">Mobile · Data · DevOps</div><div class="mi"><span>Flutter</span><span>React Native</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>Docker</span><span>APISIX</span><span>CI/CD</span><span>GitLab</span><span>Linux</span></div></div>
+        <div class="mod"><div class="ml">Langages</div><div class="mi"><span><img src="portfolio/icons/typescript.svg" alt="">TypeScript</span><span><img src="portfolio/icons/javascript.svg" alt="">JavaScript</span><span><img src="portfolio/icons/python.svg" alt="">Python</span><span><img src="portfolio/icons/php.svg" alt="">PHP</span><span><img src="portfolio/icons/openjdk.svg" alt="">Java</span><span><img src="portfolio/icons/sharp.svg" alt="">C#</span><span><img src="portfolio/icons/kotlin.svg" alt="">Kotlin</span><span><img src="portfolio/icons/gnubash.svg" alt="">Bash</span></div></div>
+        <div class="mod"><div class="ml">Front-end</div><div class="mi"><span><img src="portfolio/icons/react.svg" alt="">React</span><span><img src="portfolio/icons/nextdotjs.svg" alt="">Next.js</span><span><img src="portfolio/icons/vuedotjs.svg" alt="">Vue.js</span><span><img src="portfolio/icons/html5.svg" alt="">HTML</span><span><img src="portfolio/icons/css.svg" alt="">CSS</span></div></div>
+        <div class="mod"><div class="ml">Back-end</div><div class="mi"><span><img src="portfolio/icons/nodedotjs.svg" alt="">Node.js</span><span><img src="portfolio/icons/nestjs.svg" alt="">NestJS</span><span><img src="portfolio/icons/express.svg" alt="">Express</span><span><img src="portfolio/icons/laravel.svg" alt="">Laravel</span><span><img src="portfolio/icons/symfony.svg" alt="">Symfony</span><span><img src="portfolio/icons/django.svg" alt="">Django</span></div></div>
+        <div class="mod"><div class="ml">Mobile · Data · DevOps</div><div class="mi"><span><img src="portfolio/icons/flutter.svg" alt="">Flutter</span><span><img src="portfolio/icons/react.svg" alt="">React Native</span><span><img src="portfolio/icons/postgresql.svg" alt="">PostgreSQL</span><span><img src="portfolio/icons/mysql.svg" alt="">MySQL</span><span><img src="portfolio/icons/mongodb.svg" alt="">MongoDB</span><span><img src="portfolio/icons/redis.svg" alt="">Redis</span><span><img src="portfolio/icons/docker.svg" alt="">Docker</span><span>APISIX</span><span>CI/CD</span><span><img src="portfolio/icons/gitlab.svg" alt="">GitLab</span><span><img src="portfolio/icons/linux.svg" alt="">Linux</span></div></div>
       </div>
     </section>
 
@@ -651,6 +691,19 @@
     });
   }
 
+  /* ---- custom cursor ---- */
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var cd=document.getElementById('curDot'),cr=document.getElementById('curRing');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;cd.style.transform='translate('+mx+'px,'+my+'px)';});
+    (function rl(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;cr.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(rl);})();
+    addEventListener('pointerover',function(e){cr.classList.toggle('lg',!!e.target.closest('a,button,input,.mc,.tle,.lb-thumbs button,.comms a,.svc .s,[data-lb-close],.lb-nav,.chip'));});
+    addEventListener('pointerdown',function(){cr.classList.add('dn');});
+    addEventListener('pointerup',function(){cr.classList.remove('dn');});
+    document.addEventListener('mouseleave',function(){cd.style.opacity=cr.style.opacity=0;});
+    document.addEventListener('mouseenter',function(){cd.style.opacity=cr.style.opacity=1;});
+  }
+
   /* ---- heatmap + gps live ---- */
   function buildExtras(){
     var heat=document.getElementById('heat');
@@ -751,24 +804,27 @@
 
   /* ---- boot sequence (cinematic) ---- */
   var boot=document.getElementById('boot'),bb=document.getElementById('bootBar'),bn=document.getElementById('bootNum');
-  var checksEl=document.getElementById('bootChecks');
+  var checksEl=document.getElementById('bootChecks'),bstat=document.getElementById('bstat'),bonline=document.getElementById('bonline');
+  var STAT=['Initialisation…','Lecture identité…','Calibration télémétrie…','Déploiement missions…','Liaison GPS…','Ouverture canal comms…'];
   var CK=[['IDENTITÉ','identity'],['TÉLÉMÉTRIE','telemetry'],['MISSIONS','missions[4]'],['LIAISON GPS','gps-link'],['CANAL COMMS','comms']];
   CK.forEach(function(c){var d=document.createElement('div');d.className='ck';d.innerHTML='<span class="led"></span>'+c[0]+' <span style="color:var(--faint);margin-left:6px">'+c[1]+'</span><span class="st">OK ✓</span>';checksEl.appendChild(d);});
   var cks=checksEl.children;
   function finishBoot(){if(boot.classList.contains('done'))return;boot.classList.add('done');document.body.classList.add('live');applyLang();applyTheme(th);animate();buildExtras();CMD.help();setTimeout(function(){if(boot.parentNode)boot.remove();},650);}
   setTimeout(finishBoot,5200); /* failsafe: never trap the page */
   applyLang();applyTheme(th);tick();
-  if(reduce){bn.textContent='100';bb.style.width='100%';for(var j=0;j<cks.length;j++)cks[j].classList.add('on');setTimeout(finishBoot,200);}
+  if(reduce){bn.textContent='100';bb.style.width='100%';var rg0=document.getElementById('bootRing');if(rg0)rg0.style.strokeDashoffset=0;for(var j=0;j<cks.length;j++)cks[j].classList.add('on');setTimeout(finishBoot,200);}
   else{
     var start=null,dur=2200;
     function run(ts){
       if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
       var v=Math.round((1-Math.pow(1-p,2))*100);
       bn.textContent=v;bb.style.width=v+'%';
+      var rg=document.getElementById('bootRing');if(rg)rg.style.strokeDashoffset=415*(1-p);
       var lit=Math.floor(p*cks.length+0.001);
       for(var j=0;j<cks.length;j++)cks[j].classList.toggle('on',j<lit);
+      if(bstat)bstat.textContent=STAT[Math.min(lit,STAT.length-1)];
       if(p<1)requestAnimationFrame(run);
-      else{for(var k=0;k<cks.length;k++)cks[k].classList.add('on');setTimeout(finishBoot,420);}
+      else{for(var k=0;k<cks.length;k++)cks[k].classList.add('on');if(bstat)bstat.textContent='Système prêt';boot.classList.add('online');setTimeout(finishBoot,760);}
     }
     requestAnimationFrame(run);
   }
