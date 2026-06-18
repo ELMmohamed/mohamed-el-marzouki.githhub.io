@@ -1,647 +1,778 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark" data-density="comfortable" data-effects="full" data-bg="constellation" data-cards="bordered" data-cursor="glow" data-grain="on" data-headings="default" data-bodyfont="grotesk" data-radius="sharp">
+<html lang="fr" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mohamed Anes El Marzouki — Développeur Full-Stack & Lead</title>
-<meta name="description" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead à Paris. Conception et livraison d'applications web & mobiles : TypeScript, React/Next.js, NestJS, Flutter, DevOps. De l'architecture au déploiement." />
-<meta name="author" content="Mohamed Anes El Marzouki" />
-<meta name="keywords" content="Développeur Full-Stack, Lead Developer, React, Next.js, NestJS, Flutter, TypeScript, DevOps, Paris, Freelance, Portfolio" />
-<meta name="theme-color" content="#0a0a0b" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230a0a0b'/%3E%3Ctext%20x='50'%20y='74'%20font-family='Arial,sans-serif'%20font-size='70'%20font-weight='700'%20fill='%23cdfb45'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
-<!-- Open Graph / social sharing -->
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:title" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead" />
-<meta property="og:description" content="Conception et livraison d'applications web & mobiles, de l'architecture au déploiement. TypeScript · React/Next.js · NestJS · Flutter · DevOps." />
-<meta property="og:url" content="https://mohamed-el-marzouki.github.io/" />
-<meta property="og:image" content="https://mohamed-el-marzouki.github.io/portfolio/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mohamed Anes El Marzouki — Développeur Full-Stack & Lead" />
-<meta name="twitter:description" content="Applications web & mobiles, de l'architecture au déploiement. TypeScript · React · NestJS · Flutter · DevOps." />
-<meta name="twitter:image" content="https://mohamed-el-marzouki.github.io/portfolio/og-image.png" />
+<title>M.A. El Marzouki — Mission Control</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Syne:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="portfolio/styles.css" />
-<script>(function(){try{if(sessionStorage.getItem('introV2')==='1')document.documentElement.className+=' intro-skip';}catch(e){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230a0e12'/%3E%3Ctext%20x='50'%20y='72'%20font-family='monospace'%20font-size='62'%20font-weight='700'%20fill='%2300e5a0'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#080b0e; --panel:#0d1217; --panel-2:#10161c; --ink:#e8eef0; --dim:#8a98a0; --faint:#566169;
+    --line:rgba(232,238,240,.10); --line-2:rgba(232,238,240,.06);
+    --grid:rgba(0,229,160,.045);
+    --accent:#00e5a0; --c-cyan:#3bc9ff; --c-amber:#ffb13b; --c-coral:#ff6b5e; --c-violet:#b08bff; --c-lime:#c8f23a;
+    --ok:#00e5a0; --warn:#ffb13b;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Space Grotesk',system-ui,sans-serif;
+    --radius:14px;
+  }
+  [data-theme="light"]{
+    --bg:#eceae3; --panel:#f6f4ee; --panel-2:#fbfaf6; --ink:#15110c; --dim:#5f5a50; --faint:#9a9488;
+    --line:rgba(21,17,12,.14); --line-2:rgba(21,17,12,.07);
+    --grid:rgba(0,150,110,.05);
+    --accent:#0c8f63; --c-cyan:#1577b8; --c-amber:#b87514; --c-coral:#d4493c; --c-violet:#7a52d0; --c-lime:#5f8a12;
+    --ok:#0c8f63; --warn:#b87514;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; min-height:100vh; overflow-x:hidden;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+  .mono{font-family:var(--mono);}
+  .up{text-transform:uppercase;letter-spacing:.16em;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ===== top telemetry bar ===== */
+  .bar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:18px;
+    padding:13px 22px;border-bottom:1px solid var(--line);
+    background:color-mix(in oklch,var(--bg) 82%,transparent);backdrop-filter:blur(12px);}
+  .bar .id{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;}
+  .bar .id .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite;}
+  @keyframes pulse{50%{opacity:.4;}}
+  .bar .sys{font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.1em;}
+  .bar .sys b{color:var(--accent);}
+  .bar .right{margin-left:auto;display:flex;align-items:center;gap:10px;}
+  .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--dim);border:1px solid var(--line);border-radius:7px;padding:7px 11px;}
+  .chip b{color:var(--ink);}
+  .tgl{cursor:pointer;background:none;}
+  .tgl:hover,.kbtn:hover{border-color:var(--accent);color:var(--accent);}
+  .kbtn{cursor:pointer;background:none;display:flex;align-items:center;gap:6px;}
+
+  /* ===== bento grid ===== */
+  .wrap{max-width:1400px;margin:0 auto;padding:46px 30px 56px;}
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:26px;}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:36px;position:relative;overflow:hidden;}
+  .panel.lift{transition:transform .3s cubic-bezier(.19,1,.22,1),border-color .3s,box-shadow .3s;}
+  .panel.lift:hover{transform:translateY(-3px);border-color:color-mix(in oklch,var(--pc,var(--accent)) 50%,var(--line));box-shadow:0 24px 50px -30px #000,0 0 40px -26px var(--pc,var(--accent));}
+  .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+  .ph .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:9px;}
+  .ph .t::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--pc,var(--accent));box-shadow:0 0 8px var(--pc,var(--accent));}
+  .ph .x{font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.1em;}
+
+  /* spans */
+  .c12{grid-column:span 12;} .c8{grid-column:span 8;} .c7{grid-column:span 7;}
+  .c6{grid-column:span 6;} .c5{grid-column:span 5;} .c4{grid-column:span 4;} .c3{grid-column:span 3;}
+  @media(max-width:900px){ .c8,.c7,.c6,.c5,.c4,.c3{grid-column:span 12;} }
+
+  /* ===== identity panel ===== */
+  .idp{--pc:var(--accent);min-height:340px;display:flex;flex-direction:column;}
+  .idp .role{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);}
+  .idp h1{font-size:clamp(40px,6vw,82px);font-weight:600;letter-spacing:-.03em;line-height:.92;margin:14px 0 0;}
+  .idp h1 em{font-style:normal;color:var(--accent);}
+  .idp .sub{color:var(--dim);font-size:15px;line-height:1.5;max-width:52ch;margin-top:16px;}
+  .idp .sub b{color:var(--ink);font-weight:500;}
+  .idp .meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;padding-top:20px;}
+  .tg{font-family:var(--mono);font-size:11px;letter-spacing:.06em;border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--dim);}
+  .tg .led{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:7px;vertical-align:middle;}
+  .idp .glow{position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,color-mix(in oklch,var(--accent) 22%,transparent),transparent 65%);pointer-events:none;}
+
+  /* metrics gauges */
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .gauge .v{font-size:38px;font-weight:600;letter-spacing:-.02em;line-height:1;}
+  .gauge .v .s{color:var(--pc,var(--accent));}
+  .gauge .l{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:7px;}
+  .gauge .track{height:3px;background:var(--line);border-radius:2px;margin-top:11px;overflow:hidden;}
+  .gauge .track i{display:block;height:100%;width:0;background:var(--pc,var(--accent));transition:width 1.1s cubic-bezier(.19,1,.22,1);}
+
+  /* stack telemetry bars */
+  .tel{display:flex;flex-direction:column;gap:13px;}
+  .tel .row .l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;margin-bottom:6px;color:var(--dim);}
+  .tel .row .l b{color:var(--ink);font-weight:500;}
+  .tel .row .l .pct{color:var(--pc,var(--accent));}
+  .tel .bar2{height:6px;border-radius:3px;background:var(--line);overflow:hidden;}
+  .tel .bar2 i{display:block;height:100%;width:0;border-radius:3px;background:var(--pc,var(--accent));transition:width 1s cubic-bezier(.19,1,.22,1);}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+  .tags span{font-family:var(--mono);font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:5px 9px;}
+  /* full stack modules */
+  .mods{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;}
+  @media(max-width:560px){ .mods{grid-template-columns:1fr;} }
+  .mod .ml{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pc,var(--accent));margin-bottom:9px;}
+  .mod .mi{display:flex;flex-wrap:wrap;gap:6px;}
+  .mod .mi span{font-family:var(--mono);font-size:11px;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 10px;background:var(--panel-2);transition:.2s;}
+  .mod .mi span:hover{border-color:var(--pc,var(--accent));color:var(--pc,var(--accent));transform:translateY(-2px);}
+
+  /* mission cards (projects) */
+  .missions{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:18px;}
+  @media(max-width:980px){ .missions{grid-template-columns:1fr 1fr;} }
+  @media(max-width:560px){ .missions{grid-template-columns:1fr;} }
+  .mc{border:1px solid var(--line);border-radius:14px;padding:0;cursor:pointer;background:var(--panel-2);overflow:hidden;
+    transition:transform .25s,border-color .25s,box-shadow .25s;position:relative;}
+  .mc-shot{aspect-ratio:16/10;overflow:hidden;background:var(--panel);border-bottom:1px solid var(--line);position:relative;}
+  .mc-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.19,1,.22,1);}
+  .mc:hover .mc-shot img{transform:scale(1.05);}
+  .mc-body{padding:16px 18px 18px;}
+  .mc-shot .badge{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--mcc);background:color-mix(in oklch,var(--bg) 72%,transparent);border:1px solid var(--mcc);border-radius:100px;padding:4px 9px;backdrop-filter:blur(4px);}
+  .mc:hover{transform:translateY(-3px);border-color:color-mix(in oklch,var(--mcc) 55%,var(--line));box-shadow:0 0 34px -20px var(--mcc);}
+  .mc .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .mc .code{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mcc);}
+  .mc .st{font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:var(--dim);display:flex;align-items:center;gap:6px;}
+  .mc .st .led{width:7px;height:7px;border-radius:50%;background:var(--mcc);box-shadow:0 0 7px var(--mcc);}
+  .mc h3{font-size:19px;font-weight:600;letter-spacing:-.01em;}
+  .mc p{color:var(--dim);font-size:12.5px;line-height:1.45;margin-top:7px;min-height:54px;}
+  .mc .ft{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.06em;}
+  .mc .ft .go{color:var(--mcc);}
+
+  /* log / experience */
+  .log{font-family:var(--mono);font-size:12px;line-height:1.85;max-height:300px;overflow:auto;}
+  .log .ln{display:flex;gap:12px;padding:3px 0;border-bottom:1px solid var(--line-2);}
+  .log .ts{color:var(--faint);white-space:nowrap;}
+  .log .ev{color:var(--ink);}
+  .log .ev b{color:var(--accent);font-weight:500;}
+  .log .tag{color:var(--c-amber);}
+
+  /* terminal panel — real terminal window */
+  .term{font-family:var(--mono);font-size:12.5px;line-height:1.7;height:340px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.10);border-radius:10px;overflow:hidden;background:#070b0e;box-shadow:inset 0 0 60px -30px #000;}
+  .term-bar{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0c1318;border-bottom:1px solid rgba(255,255,255,.07);flex:none;}
+  .term-bar .dots{display:flex;gap:7px;}
+  .term-bar .dots i{width:11px;height:11px;border-radius:50%;}
+  .term-bar .dots i:nth-child(1){background:#ff5f57;} .term-bar .dots i:nth-child(2){background:#febc2e;} .term-bar .dots i:nth-child(3){background:#28c840;}
+  .term-bar .ttl{flex:1;text-align:center;font-size:11px;color:#5f6e78;letter-spacing:.03em;}
+  .term-screen2{flex:1;display:flex;flex-direction:column;padding:14px 16px;overflow:hidden;position:relative;color:#b9cbc2;}
+  .term-screen2::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.18) 2px 3px);opacity:.28;}
+  .term-out{flex:1;overflow:auto;white-space:pre-wrap;word-break:break-word;position:relative;z-index:1;}
+  .term-out .echo{color:#dfeee6;}
+  .term-out .res{color:#8fa39a;}
+  .term-out .res b{color:#eaf4ee;font-weight:500;}
+  .term-out .acc{color:#4ee39a;}
+  .term-out .er{color:#ff6b5e;}
+  .tpr{white-space:nowrap;}
+  .tpr .u{color:#4ee39a;} .tpr .at{color:#5f6e78;} .tpr .h{color:#3bc9ff;} .tpr .pa{color:#b08bff;} .tpr .d{color:#5f6e78;}
+  .term-in{display:flex;align-items:center;gap:8px;padding-top:6px;position:relative;z-index:1;}
+  .term-in input{flex:1;background:none;border:0;outline:none;color:#eaf4ee;font:inherit;caret-color:transparent;}
+  .caret{display:inline-block;width:8px;height:15px;background:#4ee39a;box-shadow:0 0 8px #4ee39a;animation:bl 1.05s steps(1) infinite;margin-left:-4px;vertical-align:-2px;}
+  @keyframes bl{50%{opacity:0;}}
+  @media (prefers-reduced-motion: reduce){ .caret{animation:none;} }
+
+  /* comms */
+  .comms{display:flex;flex-direction:column;gap:10px;}
+  .comms a{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:10px;padding:13px 15px;transition:.2s;font-size:13.5px;}
+  .comms a:hover{border-color:var(--accent);color:var(--accent);transform:translateX(3px);}
+  .comms a .k{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);}
+  .comms a:hover .k{color:var(--accent);}
+
+  /* sparkline waveform */
+  .wave{display:flex;align-items:flex-end;gap:3px;height:46px;margin-top:6px;}
+  .wave i{flex:1;background:var(--pc,var(--accent));border-radius:2px 2px 0 0;opacity:.8;animation:wv 1.4s ease-in-out infinite;}
+  @keyframes wv{0%,100%{transform:scaleY(.4);}50%{transform:scaleY(1);}}
+
+  /* footer strip */
+  .foot{border-top:1px solid var(--line);margin-top:20px;padding:16px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;}
+  .foot b{color:var(--dim);}
+
+  /* boot overlay — cinematic */
+  .boot{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;font-family:var(--mono);transition:opacity .6s ease, transform .6s ease;overflow:hidden;}
+  .boot.done{opacity:0;transform:scale(1.04);pointer-events:none;}
+  .boot::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 72%);opacity:.6;}
+  .boot .radar{position:absolute;top:50%;left:50%;width:140vmax;height:140vmax;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 0deg, color-mix(in oklch,var(--accent) 14%,transparent), transparent 28%);animation:bspin 3.6s linear infinite;pointer-events:none;}
+  .boot .ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid var(--line);border-radius:50%;}
+  .boot .ring.r1{width:230px;height:230px;animation:bpulse 2.6s ease-out infinite;}
+  .boot .ring.r2{width:230px;height:230px;animation:bpulse 2.6s ease-out infinite 1.3s;}
+  @keyframes bspin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+  @keyframes bpulse{0%{width:170px;height:170px;opacity:.7;}100%{width:520px;height:520px;opacity:0;}}
+  .boot .mono-mark{position:relative;width:118px;height:118px;display:grid;place-items:center;border:1px solid color-mix(in oklch,var(--accent) 40%,var(--line));border-radius:24px;background:color-mix(in oklch,var(--panel) 70%,transparent);box-shadow:0 0 60px -20px var(--accent);}
+  .boot .mono-mark span{font-family:var(--sans);font-weight:700;font-size:60px;color:var(--accent);text-shadow:0 0 24px color-mix(in oklch,var(--accent) 60%,transparent);}
+  .boot .mono-mark .scan{position:absolute;left:0;right:0;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:bscan 1.8s ease-in-out infinite;}
+  @keyframes bscan{0%,100%{top:6%;}50%{top:92%;}}
+  .boot .pct{font-family:var(--sans);font-weight:700;font-size:64px;letter-spacing:-.03em;color:var(--ink);line-height:1;}
+  .boot .pct .u{color:var(--accent);font-size:.5em;}
+  .boot .logo{font-size:11px;letter-spacing:.34em;color:var(--dim);}
+  .boot .checks{display:flex;flex-direction:column;gap:7px;width:min(360px,82vw);font-size:11px;}
+  .boot .ck{display:flex;align-items:center;gap:10px;color:var(--faint);opacity:.35;transition:opacity .3s,color .3s;}
+  .boot .ck.on{opacity:1;color:var(--dim);}
+  .boot .ck .led{width:7px;height:7px;border-radius:50%;background:var(--line);flex:none;transition:.3s;}
+  .boot .ck.on .led{background:var(--accent);box-shadow:0 0 8px var(--accent);}
+  .boot .ck .st{margin-left:auto;color:var(--accent);opacity:0;}
+  .boot .ck.on .st{opacity:1;}
+  .boot .pbar{width:min(360px,82vw);height:2px;background:var(--line);overflow:hidden;}
+  .boot .pbar i{display:block;height:100%;width:0;background:var(--accent);box-shadow:0 0 12px var(--accent);transition:width .2s;}
+
+  /* panel cascade entrance */
+  .bento>section,.bento>.sep{opacity:0;transform:translateY(20px);}
+  body.live .bento>section,body.live .bento>.sep{animation:rise .7s cubic-bezier(.19,1,.22,1) forwards;}
+  body.live .bento>*:nth-child(1){animation-delay:.02s;} body.live .bento>*:nth-child(2){animation-delay:.07s;}
+  body.live .bento>*:nth-child(3){animation-delay:.12s;} body.live .bento>*:nth-child(4){animation-delay:.17s;}
+  body.live .bento>*:nth-child(5){animation-delay:.22s;} body.live .bento>*:nth-child(6){animation-delay:.27s;}
+  body.live .bento>*:nth-child(7){animation-delay:.32s;} body.live .bento>*:nth-child(8){animation-delay:.37s;}
+  body.live .bento>*:nth-child(9){animation-delay:.42s;} body.live .bento>*:nth-child(n+10){animation-delay:.47s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+
+  @media (prefers-reduced-motion: reduce){ .wave i,.bar .id .dot,.boot .radar,.boot .ring,.boot .mono-mark .scan{animation:none;} .bento>section,.bento>.sep{opacity:1;transform:none;} }
+
+  /* section separators (rhythm + length) */
+  .sep{grid-column:span 12;display:flex;align-items:center;gap:18px;margin:26px 2px 4px;}
+  .sep .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent);}
+  .sep .tx{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+  .sep .ln{flex:1;height:1px;background:var(--line);}
+  .sep:first-of-type{margin-top:6px;}
+
+  /* ===== project lightbox ===== */
+  .lb{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:34px;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .lb.open{opacity:1;pointer-events:auto;}
+  .lb-bd{position:absolute;inset:0;background:color-mix(in oklch,var(--bg) 78%,transparent);backdrop-filter:blur(10px);}
+  .lb-panel{position:relative;width:min(1060px,94vw);max-height:88vh;display:flex;flex-direction:column;background:var(--panel);border:1px solid color-mix(in oklch,var(--lc,var(--accent)) 40%,var(--line));border-radius:18px;overflow:hidden;box-shadow:0 50px 120px -40px #000;transform:scale(.98);transition:transform .25s cubic-bezier(.19,1,.22,1);}
+  .lb.open .lb-panel{transform:none;}
+  .lb-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line);}
+  .lb-head .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lc,var(--accent));}
+  .lb-head h3{font-size:26px;font-weight:600;letter-spacing:-.01em;margin-top:6px;}
+  .lb-head .tech{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em;text-align:right;max-width:50%;}
+  .lb-close{cursor:pointer;background:none;border:1px solid var(--line);border-radius:8px;color:var(--dim);font-family:var(--mono);font-size:11px;padding:8px 12px;}
+  .lb-close:hover{border-color:var(--lc,var(--accent));color:var(--lc,var(--accent));}
+  .lb-stage{flex:1;min-height:0;aspect-ratio:16/9;background:#000 center/cover no-repeat;}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:color-mix(in oklch,var(--bg) 60%,transparent);color:var(--ink);cursor:pointer;font-size:18px;display:grid;place-items:center;backdrop-filter:blur(6px);}
+  .lb-nav:hover{border-color:var(--lc,var(--accent));color:var(--lc,var(--accent));}
+  .lb-nav.prev{left:14px;} .lb-nav.next{right:14px;}
+  .lb-thumbs{display:flex;gap:10px;padding:14px 24px;border-top:1px solid var(--line);}
+  .lb-thumbs button{width:90px;height:56px;border-radius:8px;border:1px solid var(--line);background:#000 center/cover no-repeat;cursor:pointer;opacity:.5;transition:.2s;}
+  .lb-thumbs button.on{opacity:1;border-color:var(--lc,var(--accent));box-shadow:0 0 0 1px var(--lc,var(--accent));}
+
+  /* enriched lightbox info column */
+  .lb-main{display:grid;grid-template-columns:1.7fr 1fr;min-height:0;}
+  @media(max-width:760px){ .lb-main{grid-template-columns:1fr;} }
+  .lb-info{padding:22px 24px;border-left:1px solid var(--line);overflow:auto;}
+  .lb-info p{color:var(--dim);font-size:13.5px;line-height:1.6;margin-bottom:16px;}
+  .lb-info .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 10px;}
+  .lb-info ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
+  .lb-info li{display:flex;gap:10px;color:var(--ink);font-size:12.5px;line-height:1.4;}
+  .lb-info li::before{content:"";width:6px;height:6px;background:var(--lc,var(--accent));flex:none;margin-top:6px;border-radius:1px;}
+  .lb-info .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .lb-info .chips span{font-family:var(--mono);font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:5px 9px;}
+  @media(max-width:760px){ .lb-info{border-left:0;border-top:1px solid var(--line);} }
+
+  /* contribution heatmap */
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:900px){ .tl{grid-template-columns:1fr 1fr;} }
+  @media(max-width:560px){ .tl{grid-template-columns:1fr;} }
+  .tle{border:1px solid var(--line);border-radius:13px;padding:18px;background:var(--panel-2);position:relative;transition:transform .25s,border-color .25s,box-shadow .25s;border-left:2px solid var(--c-cyan);}
+  .tle:hover{transform:translateY(-3px);border-color:color-mix(in oklch,var(--c-cyan) 50%,var(--line));box-shadow:0 0 34px -22px var(--c-cyan);}
+  .tle.edu{border-left-color:var(--c-violet);}
+  .tle .yr{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--c-cyan);margin-bottom:10px;}
+  .tle.edu .yr{color:var(--c-violet);}
+  .tle h4{font-size:17px;font-weight:600;letter-spacing:-.01em;}
+  .tle .org{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:5px;}
+  .tle p{font-size:12.5px;color:var(--dim);line-height:1.45;margin-top:10px;}
+  .tle .tt{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .tle .tt span{font-family:var(--mono);font-size:10px;color:var(--faint);border:1px solid var(--line);border-radius:6px;padding:4px 8px;}
+  .heat{display:grid;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;}
+  .heat i{aspect-ratio:1;border-radius:3px;background:var(--line);transition:transform .15s;}
+  .heat i:hover{transform:scale(1.35);}
+  .heat i.l1{background:color-mix(in oklch,var(--accent) 28%,var(--line));}
+  .heat i.l2{background:color-mix(in oklch,var(--accent) 52%,transparent);}
+  .heat i.l3{background:color-mix(in oklch,var(--accent) 76%,transparent);}
+  .heat i.l4{background:var(--accent);}
+  .heat-legend{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-top:14px;font-family:var(--mono);font-size:9.5px;color:var(--faint);}
+  .heat-legend i{width:11px;height:11px;border-radius:3px;display:inline-block;}
+
+  /* rōnin live gps */
+  .gps{position:relative;border-radius:12px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,color-mix(in oklch,var(--c-amber) 8%,var(--panel-2)),var(--panel-2));border:1px solid var(--line);height:188px;}
+  .gps svg{position:absolute;inset:0;width:100%;height:100%;}
+  .gps .roads line{stroke:var(--line);stroke-width:1;}
+  .gps .route{fill:none;stroke:var(--c-amber);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 5px var(--c-amber));}
+  .gps .hud{position:absolute;left:13px;bottom:11px;font-family:var(--mono);}
+  .gps .hud .sp{font-size:30px;font-weight:700;color:var(--ink);line-height:1;}
+  .gps .hud .sp small{font-size:11px;color:var(--dim);font-weight:400;}
+  .gps .hud .lb2{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-amber);margin-top:4px;}
+  .gps .tagtop{position:absolute;top:11px;left:13px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--c-amber);border:1px solid color-mix(in oklch,var(--c-amber) 40%,var(--line));border-radius:100px;padding:4px 9px;background:color-mix(in oklch,var(--bg) 50%,transparent);}
+  .gps .dist{position:absolute;top:11px;right:13px;font-family:var(--mono);font-size:11px;color:var(--dim);}
+  @media (prefers-reduced-motion: reduce){ .lb,.lb-panel{transition:none;} }
+
+  /* services */
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:760px){ .svc{grid-template-columns:1fr;} }
+  .svc .s{border:1px solid var(--line);border-radius:13px;padding:22px;background:var(--panel-2);border-top:2px solid var(--sc);transition:transform .25s,box-shadow .25s,border-color .25s;}
+  .svc .s:hover{transform:translateY(-3px);box-shadow:0 0 34px -22px var(--sc);}
+  .svc .s .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:19px;border:1px solid var(--sc);color:var(--sc);margin-bottom:14px;}
+  .svc .s h4{font-size:17px;font-weight:600;letter-spacing:-.01em;}
+  .svc .s p{font-size:12.5px;color:var(--dim);line-height:1.5;margin-top:8px;}
+  .svc .s ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:6px;}
+  .svc .s li{font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;gap:8px;}
+  .svc .s li::before{content:"▹";color:var(--sc);}
+
+  /* testimonials */
+  .quotes{display:flex;flex-direction:column;gap:14px;}
+  .q{border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:var(--panel-2);border-left:2px solid var(--c-violet);}
+  .q p{font-size:13.5px;line-height:1.55;color:var(--ink);}
+  .q .by{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--dim);margin-top:11px;}
+  .q .by b{color:var(--c-violet);font-weight:500;}
+
+  /* ===== mobile pass ===== */
+  @media(max-width:600px){
+    .wrap{padding:26px 16px 40px;}
+    .panel{padding:22px;}
+    .bento{gap:16px;}
+    .bar{flex-wrap:wrap;gap:10px 14px;padding:11px 16px;}
+    .bar .sys{display:none;}
+    .idp{min-height:0;}
+    .idp h1{font-size:clamp(38px,12vw,60px);}
+    .heat{overflow-x:auto;}
+    .sep{margin:16px 2px 2px;}
+    .lb{padding:14px;}
+    .lb-head{flex-wrap:wrap;}
+    .lb-head .tech{display:none;}
+  }
+</style>
 </head>
 <body>
 
-<!-- ============ INTRO PRELOADER ============ -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro-grid"></div>
-  <div class="intro-top">
-    <span class="intro-brand mono"><span class="dot"></span>M.A. EL MARZOUKI</span>
-    <span class="intro-loading mono">Chargement</span>
-  </div>
-  <div class="intro-center">
-    <div class="intro-line"><span>Développeur</span></div>
-    <div class="intro-line"><span>Full-Stack <em>&amp; Lead</em></span></div>
-  </div>
-  <div class="intro-bottom">
-    <span class="intro-place mono">Paris · FR</span>
-    <span class="intro-count mono"><span id="introNum">0</span><i>%</i></span>
-  </div>
-  <div class="intro-bar"><i id="introBar"></i></div>
+<!-- boot -->
+<div class="boot" id="boot">
+  <div class="radar"></div><div class="ring r1"></div><div class="ring r2"></div>
+  <div class="mono-mark"><span>M</span><div class="scan"></div></div>
+  <div class="pct"><span id="bootNum">0</span><span class="u">%</span></div>
+  <div class="logo">M.A. EL MARZOUKI · MISSION CONTROL OS</div>
+  <div class="checks" id="bootChecks"></div>
+  <div class="pbar"><i id="bootBar"></i></div>
 </div>
 
-<div class="scroll-prog" id="scrollProg"></div>
-<div class="cursor-glow"></div>
-
-<!-- ============ NAV ============ -->
-<nav class="nav" id="nav">
-  <a href="#top" class="brand"><span class="dot"></span>M.A. EL MARZOUKI</a>
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="#about" data-nav="about" data-i18n="nav_about">À propos</a>
-      <a href="#experience" data-nav="experience" data-i18n="nav_xp">Expériences</a>
-      <a href="#projects" data-nav="projects" data-i18n="nav_projects">Projets</a>
-      <a href="#stack" data-nav="stack" data-i18n="nav_stack">Stack</a>
-      <a href="#contact" class="nav-cta" data-magnetic data-i18n="nav_contact">Me contacter</a>
-    </div>
-    <button class="lang-switch fr" data-lang-toggle aria-label="Changer de langue"><span class="lang-fr">FR</span><span class="sep">/</span><span class="lang-en">EN</span></button>
-    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+<!-- telemetry bar -->
+<header class="bar">
+  <div class="id"><span class="dot"></span>M.A. EL MARZOUKI</div>
+  <div class="sys">SYS: <b>NOMINAL</b> · LAT 48.85 · LON 2.35 · PARIS</div>
+  <div class="right">
+    <span class="chip" id="clock">--:--:--</span>
+    <button class="chip kbtn" id="cmdkBtn" title="Recherche">⌘ <b>K</b></button>
+    <button class="chip tgl" id="langBtn" aria-label="Langue"><b id="langL">FR</b></button>
+    <button class="chip tgl" id="themeBtn" aria-label="Thème">☾ <b id="themeL">DARK</b></button>
   </div>
-</nav>
-
-<!-- ============ MOBILE MENU ============ -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mm-inner">
-    <a href="#about" class="mm-link"><span class="mm-n">01</span><span data-i18n="nav_about">À propos</span></a>
-    <a href="#experience" class="mm-link"><span class="mm-n">02</span><span data-i18n="nav_xp">Expériences</span></a>
-    <a href="#projects" class="mm-link"><span class="mm-n">03</span><span data-i18n="nav_projects">Projets</span></a>
-    <a href="#stack" class="mm-link"><span class="mm-n">04</span><span data-i18n="nav_stack">Stack</span></a>
-    <a href="#contact" class="mm-link"><span class="mm-n">05</span><span data-i18n="nav_contact">Me contacter</span></a>
-    <div class="mm-foot">
-      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="cta_cv">Télécharger le CV</span></a>
-      <a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
-    </div>
-  </div>
-</div>
-
-<!-- ============ DOT NAV ============ -->
-<nav class="dotnav" aria-label="Sections">
-  <a href="#top" data-dot="top" data-label="Accueil"></a>
-  <a href="#about" data-dot="about" data-label="À propos"></a>
-  <a href="#experience" data-dot="experience" data-label="Expériences"></a>
-  <a href="#projects" data-dot="projects" data-label="Projets"></a>
-  <a href="#stack" data-dot="stack" data-label="Stack"></a>
-  <a href="#formation" data-dot="formation" data-label="Formation"></a>
-  <a href="#contact" data-dot="contact" data-label="Contact"></a>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="top" data-screen-label="Hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-aurora"><i></i><i></i><i></i></div>
-  <div class="hero-spot"></div>
-  <canvas class="hero-net" id="heroNet"></canvas>
-  <canvas class="hero-fx" id="heroFx"></canvas>
-  <div class="hero-glow"></div>
-  <div class="wrap">
-    <div class="hero-status he mono" style="--hd:120ms"><span class="live"></span><span data-i18n="hero_status">Disponible · Freelance · Paris, Île-de-France</span></div>
-    <h1>
-      <span class="ln"><span class="lnw">Mohamed</span></span>
-      <span class="ln"><span class="lnw">Anes <span class="accent">El&nbsp;Marzouki</span></span></span>
-    </h1>
-    <div class="hero-foot">
-      <div class="hero-role he" style="--hd:520ms" data-i18n="hero_role">Développeur Full-Stack · Lead</div>
-      <p class="hero-lead he" style="--hd:600ms" data-i18n="hero_lead">
-        Je conçois et livre des applications <strong>web &amp; mobiles</strong>, de l'architecture au déploiement — avec le cap fixé sur la <strong>performance</strong>, la <strong>sécurité</strong> et la qualité du code.
-      </p>
-    </div>
-    <div class="hero-cta he" style="--hd:700ms">
-      <a href="#projects" class="btn btn-primary" data-magnetic data-i18n="cta_projects">Voir mes projets</a>
-      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn" data-i18n="cta_cv"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Télécharger le CV</a>
-      <a href="cv.html" target="_blank" rel="noopener" class="cv-view" data-i18n="cta_cv_view">Voir en ligne ↗</a>
-    </div>
-  </div>
-  <div class="scroll-cue he" style="--hd:900ms"><span>Scroll</span><span class="bar"></span></div>
 </header>
 
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee">
-    <span>TypeScript<span class="star">✦</span></span>
-    <span>React · Next.js<span class="star">✦</span></span>
-    <span>NestJS<span class="star">✦</span></span>
-    <span>Flutter<span class="star">✦</span></span>
-    <span>DevOps<span class="star">✦</span></span>
-    <span>Lead<span class="star">✦</span></span>
+<div class="wrap">
+  <div class="bento">
+
+    <div class="sep"><span class="n">01</span><span class="tx">Identité</span><span class="ln"></span></div>
+
+    <!-- identity -->
+    <section class="panel idp c8 lift">
+      <div class="glow"></div>
+      <div class="ph"><span class="t">Identité</span><span class="x">UID · MAEM-2026</span></div>
+      <div class="role" data-i18n="role">Développeur Full-Stack · Lead</div>
+      <h1>Mohamed&nbsp;Anes<br><em>El Marzouki</em></h1>
+      <p class="sub" data-i18n="bio">Je conçois et livre des applications <b>web &amp; mobiles</b>, de l'architecture au déploiement — cap sur la <b>performance</b>, la <b>sécurité</b> et la qualité du code.</p>
+      <div class="meta">
+        <span class="tg"><span class="led"></span><span data-i18n="avail">Disponible · Freelance</span></span>
+        <span class="tg">Paris, FR</span>
+        <span class="tg">4+ <span data-i18n="yrs">ans</span></span>
+        <span class="tg">FR · AR · EN</span>
+      </div>
+    </section>
+
+    <!-- metrics -->
+    <section class="panel c4 lift" style="--pc:var(--c-cyan)">
+      <div class="ph"><span class="t" style="--pc:var(--c-cyan)">Métriques</span><span class="x">LIVE</span></div>
+      <div class="metrics">
+        <div class="gauge" style="--pc:var(--c-cyan)"><div class="v" data-to="4">0<span class="s">+</span></div><div class="l" data-i18n="m_years">Années</div><div class="track"><i data-w="80"></i></div></div>
+        <div class="gauge" style="--pc:var(--c-amber)"><div class="v" data-to="12">0<span class="s">+</span></div><div class="l" data-i18n="m_proj">Projets</div><div class="track"><i data-w="92"></i></div></div>
+        <div class="gauge" style="--pc:var(--c-violet)"><div class="v" data-to="25">0<span class="s">+</span></div><div class="l" data-i18n="m_tech">Technos</div><div class="track"><i data-w="88"></i></div></div>
+        <div class="gauge" style="--pc:var(--c-coral)"><div class="v" data-to="6">0<span class="s">+</span></div><div class="l" data-i18n="m_cli">Clients</div><div class="track"><i data-w="70"></i></div></div>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">02</span><span class="tx">Missions · Projets</span><span class="ln"></span></div>
+
+    <!-- missions / projects -->
+    <section class="panel c12 lift">
+      <div class="ph"><span class="t">Missions · Projets</span><span class="x">04 ACTIVES</span></div>
+      <div class="missions">
+        <div class="mc" style="--mcc:var(--accent)" data-case="logareth">
+          <div class="mc-shot"><span class="badge">MSN-01</span><img src="portfolio/logareth.png" alt="Logareth" loading="lazy" /></div>
+          <div class="mc-body">
+            <div class="top"><h3>Logareth</h3><span class="st"><span class="led"></span>FLAGSHIP</span></div>
+            <p data-i18n="p_log">SaaS eSport multi-tenant — structures, gamers, events. Microservices NestJS + APISIX, Next.js 15.</p>
+            <div class="ft"><span>NESTJS · APISIX · NEXT</span><span class="go" data-i18n="open">ouvrir →</span></div>
+          </div>
+        </div>
+        <div class="mc" style="--mcc:var(--c-cyan)" data-case="vinbot">
+          <div class="mc-shot"><span class="badge">MSN-02</span><img src="portfolio/vinbot.png" alt="VinBOT" loading="lazy" /></div>
+          <div class="mc-body">
+            <div class="top"><h3>VinBOT</h3><span class="st"><span class="led"></span>FLAGSHIP</span></div>
+            <p data-i18n="p_vin">Sourcing Vinted par reconnaissance d'image (CLIP), scraping Playwright, alertes Telegram.</p>
+            <div class="ft"><span>CLIP · REDIS · MINIO</span><span class="go" data-i18n="open">ouvrir →</span></div>
+          </div>
+        </div>
+        <div class="mc" style="--mcc:var(--c-amber)" data-case="ronin">
+          <div class="mc-shot"><span class="badge">MSN-03</span><img src="portfolio/ronin.png" alt="Rōnin" loading="lazy" /></div>
+          <div class="mc-body">
+            <div class="top"><h3>Rōnin</h3><span class="st"><span class="led"></span>LIVE</span></div>
+            <p data-i18n="p_ron">App moto : trajets GPS, cartes hors-ligne, stats de roulage et carnet d'entretien. Flutter.</p>
+            <div class="ft"><span>FLUTTER · NESTJS</span><span class="go" data-i18n="open">ouvrir →</span></div>
+          </div>
+        </div>
+        <div class="mc" style="--mcc:var(--c-violet)" data-case="octave">
+          <div class="mc-shot"><span class="badge">MSN-04</span><img src="portfolio/octave.png" alt="Octave" loading="lazy" /></div>
+          <div class="mc-body">
+            <div class="top"><h3>Octave</h3><span class="st"><span class="led"></span>LIVE</span></div>
+            <p data-i18n="p_oct">Apprendre le piano au clavier MIDI : retour temps réel sur justesse, tempo, rythme. Web MIDI.</p>
+            <div class="ft"><span>NEXT · WEB MIDI</span><span class="go" data-i18n="open">ouvrir →</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">03</span><span class="tx">Parcours · Expérience</span><span class="ln"></span></div>
+
+    <!-- experience timeline (prominent) -->
+    <section class="panel c12 lift" style="--pc:var(--c-cyan)">
+      <div class="ph"><span class="t" style="--pc:var(--c-cyan)">Parcours · Trajectoire</span><span class="x">2022 → 2026</span></div>
+      <div class="tl">
+        <article class="tle"><div class="yr">2025—•</div><h4>Développeur Full-Stack</h4><div class="org">Freelance · Paris</div><p data-i18n="x1">Conception &amp; livraison d'apps web &amp; mobiles full-stack.</p><div class="tt"><span>React</span><span>Next.js</span><span>NestJS</span><span>Flutter</span></div></article>
+        <article class="tle"><div class="yr">2025</div><h4>Lead Developer</h4><div class="org">SoftProces · Paris</div><p data-i18n="x2">Pilotage technique TS, PostgreSQL, Docker, revue de code.</p><div class="tt"><span>TypeScript</span><span>NestJS</span><span>Docker</span></div></article>
+        <article class="tle"><div class="yr">2023—25</div><h4>Formateur Web &amp; Mobile</h4><div class="org">Freelance · IDF</div><p data-i18n="x3">Encadrement d'étudiants, projets pratiques, autonomie.</p><div class="tt"><span>Mentorat</span><span>Web</span><span>Mobile</span></div></article>
+        <article class="tle"><div class="yr">2023—25</div><h4>Dév Full-Stack Mobile</h4><div class="org">Eviden / Atos · Cergy</div><p data-i18n="x4">Messagerie sécurisée Flutter, plugins Java, backend.</p><div class="tt"><span>Flutter</span><span>Kotlin</span><span>Java</span></div></article>
+        <article class="tle"><div class="yr">2022—23</div><h4>Dév Full-Stack Web</h4><div class="org">Fixers · Paris</div><p data-i18n="x5">Back-office Laravel/MySQL, chatbot, analytics.</p><div class="tt"><span>Laravel</span><span>MySQL</span></div></article>
+        <article class="tle edu"><div class="yr">2025</div><h4>Master · Architecte SI</h4><div class="org">ETNA</div><p data-i18n="x6">Spécialisation Cloud &amp; Micro-services.</p><div class="tt"><span>Cloud</span><span>Micro-services</span></div></article>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">04</span><span class="tx">Services · Recommandations</span><span class="ln"></span></div>
+
+    <!-- services -->
+    <section class="panel c7 lift">
+      <div class="ph"><span class="t">Services · Ce que je fais</span><span class="x">3 PÔLES</span></div>
+      <div class="svc">
+        <div class="s" style="--sc:var(--accent)">
+          <div class="ic">⬡</div>
+          <h4 data-i18n="sv1t">Web Full-Stack</h4>
+          <p data-i18n="sv1p">Apps web de l'archi au déploiement : APIs robustes, front réactif, données fiables.</p>
+          <ul><li>React · Next.js</li><li>NestJS · Node</li><li>PostgreSQL</li></ul>
+        </div>
+        <div class="s" style="--sc:var(--c-amber)">
+          <div class="ic">▤</div>
+          <h4 data-i18n="sv2t">Mobile</h4>
+          <p data-i18n="sv2p">Apps iOS/Android performantes, natives ou cross-platform, du proto au store.</p>
+          <ul><li>Flutter · Dart</li><li>React Native</li><li>Kotlin · Java</li></ul>
+        </div>
+        <div class="s" style="--sc:var(--c-cyan)">
+          <div class="ic">◈</div>
+          <h4 data-i18n="sv3t">Lead · DevOps</h4>
+          <p data-i18n="sv3p">Pilotage technique, revue de code, CI/CD et mise en prod sereine.</p>
+          <ul><li>Docker · CI/CD</li><li>Code review</li><li>Archi micro-services</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="panel c5 lift" style="--pc:var(--c-violet)">
+      <div class="ph"><span class="t" style="--pc:var(--c-violet)">Transmissions reçues</span><span class="x">REF</span></div>
+      <div class="quotes">
+        <div class="q">
+          <p data-i18n="q1">« Autonome et rigoureux : il a pris l'archi en main et livré une app stable, dans les temps. »</p>
+          <div class="by">— <b>Lead Tech</b> · SoftProces</div>
+        </div>
+        <div class="q">
+          <p data-i18n="q2">« Très à l'aise du back au mobile : sur l'app de messagerie sécurisée, du natif solide livré proprement. »</p>
+          <div class="by">— <b>Manager</b> · Eviden / Atos</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">05</span><span class="tx">Capacités · Stack</span><span class="ln"></span></div>
+
+    <!-- stack telemetry -->
+    <section class="panel c8 lift" style="--pc:var(--c-lime)">
+      <div class="ph"><span class="t" style="--pc:var(--c-lime)">Télémétrie · Stack</span><span class="x">% MAÎTRISE</span></div>
+      <div class="tel">
+        <div class="row"><div class="l"><b>TypeScript · JS</b><span class="pct">95%</span></div><div class="bar2"><i data-w="95"></i></div></div>
+        <div class="row"><div class="l"><b>React · Next.js</b><span class="pct">92%</span></div><div class="bar2"><i data-w="92"></i></div></div>
+        <div class="row"><div class="l"><b>NestJS · Node</b><span class="pct">90%</span></div><div class="bar2"><i data-w="90"></i></div></div>
+        <div class="row"><div class="l"><b>Flutter · Mobile</b><span class="pct">82%</span></div><div class="bar2"><i data-w="82"></i></div></div>
+        <div class="row"><div class="l"><b>PostgreSQL · DevOps</b><span class="pct">86%</span></div><div class="bar2"><i data-w="86"></i></div></div>
+      </div>
+      <div class="tags" style="display:none"></div>
+      <div class="mods" style="--pc:var(--c-lime);margin-top:22px">
+        <div class="mod"><div class="ml">Langages</div><div class="mi"><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>PHP</span><span>Java</span><span>C#</span><span>Kotlin</span><span>Bash</span></div></div>
+        <div class="mod"><div class="ml">Front-end</div><div class="mi"><span>React</span><span>Next.js</span><span>Vue.js</span><span>HTML</span><span>CSS</span></div></div>
+        <div class="mod"><div class="ml">Back-end</div><div class="mi"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Laravel</span><span>Symfony</span><span>Django</span></div></div>
+        <div class="mod"><div class="ml">Mobile · Data · DevOps</div><div class="mi"><span>Flutter</span><span>React Native</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>Docker</span><span>APISIX</span><span>CI/CD</span><span>GitLab</span><span>Linux</span></div></div>
+      </div>
+    </section>
+
+    <!-- signal / now -->
+    <section class="panel c4 lift" style="--pc:var(--c-amber)">
+      <div class="ph"><span class="t" style="--pc:var(--c-amber)">Signal</span><span class="x">RT</span></div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--dim);line-height:1.7">
+        <div>BUILD <span class="acc" style="color:var(--ok)">✓ passing</span></div>
+        <div>DEPLOY <span style="color:var(--ok)">▲ prod</span></div>
+        <div data-i18n="learning">EN VEILLE techno</div>
+      </div>
+      <div class="wave" style="--pc:var(--c-amber)">
+        <i style="animation-delay:0s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.4s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.7s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:.9s"></i>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">06</span><span class="tx">Activité · Temps réel</span><span class="ln"></span></div>
+
+    <!-- contribution heatmap -->
+    <section class="panel c8 lift">
+      <div class="ph"><span class="t">Activité · Commits</span><span class="x">52 SEMAINES</span></div>
+      <div class="heat" id="heat"></div>
+      <div class="heat-legend"><span data-i18n="less">moins</span><i style="background:var(--line)"></i><i class="l1" style="background:color-mix(in oklch,var(--accent) 28%,var(--line))"></i><i class="l2" style="background:color-mix(in oklch,var(--accent) 52%,transparent)"></i><i class="l3" style="background:color-mix(in oklch,var(--accent) 76%,transparent)"></i><i class="l4" style="background:var(--accent)"></i><span data-i18n="more">plus</span></div>
+    </section>
+
+    <!-- rōnin live gps -->
+    <section class="panel c4 lift" style="--pc:var(--c-amber)">
+      <div class="ph"><span class="t" style="--pc:var(--c-amber)">Rōnin · GPS Live</span><span class="x">RT</span></div>
+      <div class="gps">
+        <span class="tagtop">● COL DE LA SCHLUCHT</span>
+        <span class="dist" id="gpsDist">128 km</span>
+        <svg viewBox="0 0 320 188" preserveAspectRatio="none">
+          <g class="roads">
+            <line x1="0" y1="60" x2="320" y2="40"/><line x1="0" y1="130" x2="320" y2="150"/>
+            <line x1="90" y1="0" x2="70" y2="188"/><line x1="220" y1="0" x2="245" y2="188"/>
+          </g>
+          <path class="route" id="gpsRoute" d="M20 170 C 70 150, 60 110, 120 100 S 210 95, 195 60 S 130 40, 200 26 S 280 30, 300 18"/>
+          <circle id="gpsDot" r="5" fill="var(--c-amber)"/>
+        </svg>
+        <div class="hud"><div class="sp"><span id="gpsSpeed">67</span> <small>km/h</small></div><div class="lb2" data-i18n="riding">en route</div></div>
+      </div>
+    </section>
+
+    <div class="sep"><span class="n">07</span><span class="tx">Système · Contact</span><span class="ln"></span></div>
+
+    <!-- terminal -->
+    <section class="panel c7 lift">
+      <div class="ph"><span class="t">Console</span><span class="x" data-i18n="term_hint">TAPE help</span></div>
+      <div class="term">
+        <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">visiteur@maem: ~ — zsh</span></div>
+        <div class="term-screen2">
+          <div class="term-out" id="tout"></div>
+          <div class="term-in"><span class="tpr"><span class="u">visiteur</span><span class="at">@</span><span class="h">maem</span><span class="d">:</span><span class="pa">~</span><span class="d">$</span></span><input id="tin" autocomplete="off" autocapitalize="off" spellcheck="false" /><span class="caret"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- comms -->
+    <section class="panel c5 lift" style="--pc:var(--c-coral)">
+      <div class="ph"><span class="t" style="--pc:var(--c-coral)">Comms · Contact</span><span class="x">OPEN</span></div>
+      <div class="comms">
+        <a href="mailto:mohamedelmparis@gmail.com"><span><span class="k">Email</span><br>mohamedelmparis@gmail.com</span><span>→</span></a>
+        <a href="https://www.linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener"><span><span class="k">LinkedIn</span><br>in/mohamed-el-marzouki</span><span>↗</span></a>
+        <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download><span><span class="k" data-i18n="cv_k">Document</span><br><span data-i18n="cv_v">Télécharger le CV</span></span><span>↧</span></a>
+      </div>
+    </section>
+
   </div>
 </div>
 
-<!-- ============ STATS BAND ============ -->
-<section class="stats-band" aria-label="Chiffres clés">
-  <div class="wrap">
-    <div class="stat-cell reveal"><div class="n" data-to="4">0<span class="suf">+</span></div><div class="k" data-i18n="stat_years">Années d'expérience</div></div>
-    <div class="stat-cell reveal" style="--d:80ms"><div class="n" data-to="10">0<span class="suf">+</span></div><div class="k" data-i18n="stat_projects">Projets &amp; missions</div></div>
-    <div class="stat-cell reveal" style="--d:160ms"><div class="n" data-to="25">0<span class="suf">+</span></div><div class="k" data-i18n="stat_tech">Technologies</div></div>
-    <div class="stat-cell reveal" style="--d:240ms"><div class="n" data-to="6">0<span class="suf">+</span></div><div class="k" data-i18n="stat_clients">Entreprises &amp; clients</div></div>
+<!-- project lightbox -->
+<div class="lb" id="lb" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lb-bd" data-lb-close></div>
+  <div class="lb-panel">
+    <div class="lb-head">
+      <div><div class="k" id="lbK">—</div><h3 id="lbT">—</h3></div>
+      <div style="display:flex;align-items:center;gap:14px;"><span class="tech" id="lbTech">—</span><button class="lb-close" data-lb-close>ESC ✕</button></div>
+    </div>
+    <div class="lb-main">
+      <div style="position:relative;">
+        <div class="lb-stage" id="lbStage"></div>
+        <button class="lb-nav prev" id="lbPrev" aria-label="Précédent">←</button>
+        <button class="lb-nav next" id="lbNext" aria-label="Suivant">→</button>
+      </div>
+      <div class="lb-info">
+        <p id="lbDesc">—</p>
+        <div class="h" data-i18n="highlights">Points clés</div>
+        <ul id="lbHigh"></ul>
+        <div class="h">Stack</div>
+        <div class="chips" id="lbChips"></div>
+      </div>
+    </div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
   </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about" data-screen-label="À propos">
-  <span class="ghost" aria-hidden="true">01</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(01)</span>
-      <span class="label mono" data-i18n="sh_about_label">À propos</span>
-    </div>
-    <div class="about-grid">
-      <div class="reveal about-sticky">
-        <div class="about-photo">
-          <image-slot id="portrait" shape="rect" src="portfolio/portrait.jpg" fit="cover" placeholder="Déposez votre photo"></image-slot>
-        </div>
-        <div class="photo-cap"><span>Mohamed Anes</span><span class="av">Paris, FR</span></div>
-        <div class="about-meta">
-          <div class="row"><span data-i18n="about_role_k">Rôle</span><span data-i18n="about_role_v">Full-Stack · Lead</span></div>
-          <div class="row"><span data-i18n="about_base_k">Base</span><span data-i18n="about_base_v">Paris, FR</span></div>
-          <div class="row"><span data-i18n="about_status_k">Statut</span><span data-i18n="about_status_v">Disponible</span></div>
-          <div class="row"><span data-i18n="about_exp_k">Exp.</span><span data-i18n="about_exp_v">4+ ans</span></div>
-        </div>
-      </div>
-      <div class="about-body reveal" style="--d:120ms">
-        <p data-i18n="about_p1">Développeur Full-Stack &amp; Lead à l'aise sur <span class="hl">l'ensemble de la chaîne technique</span> — TypeScript, React/Next.js, NestJS, Flutter — et dans l'encadrement d'équipes.</p>
-        <p class="dim" data-i18n="about_p2">J'interviens de la conception d'architecture jusqu'au déploiement, en gardant le cap sur la performance, la sécurité et la qualité du code.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPERIENCE ============ -->
-<section class="section" id="experience" data-screen-label="Expériences">
-  <span class="ghost" aria-hidden="true">02</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(02)</span>
-      <span class="label mono" data-i18n="sh_xp_label">Parcours</span>
-      <h2 data-i18n="sh_xp_title">Expériences</h2>
-    </div>
-    <div class="xp-list" id="xpList">
-      <div class="xp-rail" aria-hidden="true"><i id="xpRailFill"></i></div>
-
-      <article class="xp reveal">
-        <div class="num">01</div>
-        <div class="xp-main">
-          <div class="xp-top">
-            <h3 class="xp-role" data-i18n="xp1_role">Développeur Full-Stack Web</h3>
-            <span class="xp-date">10/2025 — Auj.</span>
-          </div>
-          <div class="xp-org" data-i18n="xp1_org">Freelance<span class="sep">/</span>Paris</div>
-          <p class="xp-desc" data-i18n="xp1_desc">Conception et développement d'applications web &amp; mobiles Full-Stack avec React, Next.js, NestJS, Django, React Native, Flutter et PostgreSQL.</p>
-          <div class="xp-tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">Django</span><span class="tag">Flutter</span></div>
-        </div>
-      </article>
-
-      <article class="xp reveal">
-        <div class="num">02</div>
-        <div class="xp-main">
-          <div class="xp-top">
-            <h3 class="xp-role" data-i18n="xp2_role">Lead Developer</h3>
-            <span class="xp-date">04/2025 — 10/2025</span>
-          </div>
-          <div class="xp-org" data-i18n="xp2_org">SoftProces<span class="sep">/</span>Paris</div>
-          <p class="xp-desc" data-i18n="xp2_desc">Développement full-stack TypeScript (React/Next.js · NestJS), gestion PostgreSQL, intégration Docker, revue de code et optimisation performance &amp; sécurité.</p>
-          <div class="xp-tags"><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">Code Review</span></div>
-        </div>
-      </article>
-
-      <article class="xp reveal">
-        <div class="num">03</div>
-        <div class="xp-main">
-          <div class="xp-top">
-            <h3 class="xp-role" data-i18n="xp3_role">Formateur Web &amp; Mobile</h3>
-            <span class="xp-date">03/2023 — 12/2025</span>
-          </div>
-          <div class="xp-org" data-i18n="xp3_org">Freelance<span class="sep">/</span>Île-de-France</div>
-          <p class="xp-desc" data-i18n="xp3_desc">Encadrement d'étudiants sur les technologies web &amp; mobile, projets pratiques et accompagnement vers l'autonomie professionnelle.</p>
-          <div class="xp-tags"><span class="tag">Mentorat</span><span class="tag">Pédagogie</span><span class="tag">Web</span><span class="tag">Mobile</span></div>
-        </div>
-      </article>
-
-      <article class="xp reveal">
-        <div class="num">04</div>
-        <div class="xp-main">
-          <div class="xp-top">
-            <h3 class="xp-role" data-i18n="xp4_role">Développeur Full-Stack Mobile</h3>
-            <span class="xp-date">01/2023 — 04/2025</span>
-          </div>
-          <div class="xp-org" data-i18n="xp4_org">Eviden / Atos<span class="sep">/</span>Cergy</div>
-          <p class="xp-desc" data-i18n="xp4_desc">Messagerie sécurisée avec Flutter (Dart/Kotlin), développement de plugins Java, intégration backend et scripts logiques en Python.</p>
-          <div class="xp-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Python</span></div>
-        </div>
-      </article>
-
-      <article class="xp reveal">
-        <div class="num">05</div>
-        <div class="xp-main">
-          <div class="xp-top">
-            <h3 class="xp-role" data-i18n="xp5_role">Développeur Full-Stack Web</h3>
-            <span class="xp-date">03/2022 — 01/2023</span>
-          </div>
-          <div class="xp-org" data-i18n="xp5_org">Fixers<span class="sep">/</span>Paris</div>
-          <p class="xp-desc" data-i18n="xp5_desc">Création du back-office (Laravel, MySQL), développement d'un chatbot et ajout de fonctionnalités analytiques.</p>
-          <div class="xp-tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Chatbot</span><span class="tag">Analytics</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROJECTS ============ -->
-<section class="section" id="projects" data-screen-label="Projets">
-  <span class="ghost" aria-hidden="true">03</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(03)</span>
-      <span class="label mono" data-i18n="sh_proj_label">Sélection</span>
-      <h2 data-i18n="sh_proj_title">Projets</h2>
-    </div>
-    <div class="proj-grid">
-
-      <article class="proj feature reveal" data-case="logareth">
-        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
-        <div class="proj-shot" style="aspect-ratio:16/9"><image-slot id="proj-logareth" shape="rect" src="portfolio/logareth.png" fit="cover" placeholder="Capture — plateforme Logareth (16:9 ou large)"></image-slot></div>
-        <div class="proj-head">
-          <h3 class="proj-title">Logareth</h3>
-          <span class="proj-kind" data-i18n="p_log_kind">SaaS eSport · Multi-tenant</span>
-        </div>
-        <p class="proj-desc" data-i18n="p_log_desc">Plateforme SaaS qui réunit les quatre acteurs de l'écosystème eSport — <strong style="color:var(--fg);font-weight:500">structures, gamers, prestataires et spectateurs</strong>. Chaque structure orchestre ses équipes et rosters, ses événements (tournois, scrims, matchs), son fil de publications façon Twitter et sa marketplace de prestations. L'architecture repose sur des <strong style="color:var(--fg);font-weight:500">microservices NestJS</strong> (auth/RBAC, domaine structure) isolés derrière une gateway <strong style="color:var(--fg);font-weight:500">APISIX</strong> en forward-auth, avec une isolation multi-tenant par <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--accent)">structure_id</code> et des rôles auto-générés par structure. Le frontend <strong style="color:var(--fg);font-weight:500">Next.js 15</strong> (App Router, React 19) adopte une direction artistique cyberpunk eSport.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="tag">NestJS 11</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL 17</span><span class="tag">APISIX</span><span class="tag">Next.js 15</span><span class="tag">Docker Compose</span></div>
-          <span class="proj-status"><span class="live"></span>Projet phare</span>
-        </div>
-      </article>
-
-      <article class="proj feature reveal" data-case="vinbot">
-        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
-        <div class="proj-shot" style="aspect-ratio:16/9"><image-slot id="proj-vinbot" shape="rect" src="portfolio/vinbot.png" fit="cover" placeholder="Capture — interface VinBOT"></image-slot></div>
-        <div class="proj-head">
-          <h3 class="proj-title">VinBOT</h3>
-          <span class="proj-kind" data-i18n="p_vin_kind">Sourcing IA · Microservices</span>
-        </div>
-        <p class="proj-desc" data-i18n="p_vin_desc">Automatisation de la veille sur Vinted à partir d'une simple <strong style="color:var(--fg);font-weight:500">image de référence</strong>. Pour chaque profil de recherche, le bot récupère les annonces par scraping (<strong style="color:var(--fg);font-weight:500">Playwright</strong>), les dédoublonne, puis les compare visuellement à l'image cible via un moteur d'IA local (<strong style="color:var(--fg);font-weight:500">embeddings CLIP</strong>) avec cache PostgreSQL — et n'envoie une alerte <strong style="color:var(--fg);font-weight:500">Telegram</strong> que pour les correspondances réellement pertinentes. Architecture en microservices NestJS derrière une gateway APISIX (forward-auth) : un service d'authentification (sessions, rôles, superadmin, comptes à mot de passe temporaire) et un service métier qui orchestre les runs, le scoring, le stockage d'images (<strong style="color:var(--fg);font-weight:500">MinIO</strong>) et les files d'attente (<strong style="color:var(--fg);font-weight:500">Redis / BullMQ</strong>) avec des workers multi-régions.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="tag">NestJS</span><span class="tag">APISIX</span><span class="tag">PostgreSQL 17</span><span class="tag">Redis / BullMQ</span><span class="tag">MinIO</span><span class="tag">Playwright</span><span class="tag">CLIP</span><span class="tag">Next.js</span><span class="tag">Docker Compose</span></div>
-          <span class="proj-status"><span class="live"></span>Projet phare</span>
-        </div>
-      </article>
-
-      <article class="proj reveal" data-case="ronin">
-        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
-        <div class="proj-shot"><image-slot id="proj-ronin" shape="rect" src="portfolio/ronin.png" fit="cover" placeholder="Capture — app Rōnin"></image-slot></div>
-        <div class="proj-head">
-          <h3 class="proj-title">Rōnin</h3>
-          <span class="proj-kind" data-i18n="p_ron_kind">Mobile · Carnet de route</span>
-        </div>
-        <p class="proj-desc" data-i18n="p_ron_desc">Application mobile pour motards : enregistrement des trajets en GPS, cartes hors-ligne, statistiques de roulage (distance, dénivelé, inclinaison) et carnet d'entretien moto. Construite en Flutter avec un backend NestJS et synchronisation temps réel.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
-        </div>
-      </article>
-
-      <article class="proj reveal" style="--d:80ms" data-case="octave">
-        <div class="open-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></div>
-        <div class="proj-shot"><image-slot id="proj-octave" shape="rect" src="portfolio/octave.png" fit="cover" placeholder="Capture — app Octave"></image-slot></div>
-        <div class="proj-head">
-          <h3 class="proj-title">Octave</h3>
-          <span class="proj-kind" data-i18n="p_oct_kind">Web · Apprentissage piano</span>
-        </div>
-        <p class="proj-desc" data-i18n="p_oct_desc">Application web pour apprendre le piano : branchez un clavier MIDI, suivez des exercices interactifs et obtenez un retour en temps réel sur les notes jouées (justesse, tempo, rythme). Progression gamifiée et bibliothèque de morceaux. Frontend Next.js avec Web MIDI API, backend NestJS et PostgreSQL.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="tag">Next.js</span><span class="tag">Web MIDI</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ STACK ============ -->
-<section class="section band" id="stack" data-screen-label="Stack">
-  <span class="ghost" aria-hidden="true">04</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(04)</span>
-      <span class="label mono" data-i18n="sh_stack_label">Outils</span>
-      <h2 data-i18n="sh_stack_title">Stack technique</h2>
-    </div>
-    <div class="stack-grid reveal">
-      <div class="stack-cat">
-        <div class="cat-label" data-i18n="cat_lang">Langages</div>
-        <div class="stack-items"><span class="ti"><img src="portfolio/icons/python.svg" alt="" loading="lazy" onerror="this.remove()" />Python</span><span class="ti"><img src="portfolio/icons/typescript.svg" alt="" loading="lazy" onerror="this.remove()" />TypeScript</span><span class="ti"><img src="portfolio/icons/php.svg" alt="" loading="lazy" onerror="this.remove()" />PHP</span><span class="ti"><img src="portfolio/icons/openjdk.svg" alt="" loading="lazy" onerror="this.remove()" />Java</span><span class="ti"><img src="portfolio/icons/sharp.svg" alt="" loading="lazy" onerror="this.remove()" />C#</span><span class="ti"><img src="portfolio/icons/kotlin.svg" alt="" loading="lazy" onerror="this.remove()" />Kotlin</span><span class="ti"><img src="portfolio/icons/gnubash.svg" alt="" loading="lazy" onerror="this.remove()" />Bash</span></div>
-      </div>
-      <div class="stack-cat">
-        <div class="cat-label" data-i18n="cat_front">Front-end</div>
-        <div class="stack-items"><span class="ti"><img src="portfolio/icons/react.svg" alt="" loading="lazy" onerror="this.remove()" />React</span><span class="ti"><img src="portfolio/icons/nextdotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Next.js</span><span class="ti"><img src="portfolio/icons/vuedotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Vue.js</span><span class="ti"><img src="portfolio/icons/html5.svg" alt="" loading="lazy" onerror="this.remove()" />HTML</span><span class="ti"><img src="portfolio/icons/css.svg" alt="" loading="lazy" onerror="this.remove()" />CSS</span></div>
-      </div>
-      <div class="stack-cat">
-        <div class="cat-label" data-i18n="cat_back">Back-end</div>
-        <div class="stack-items"><span class="ti"><img src="portfolio/icons/nodedotjs.svg" alt="" loading="lazy" onerror="this.remove()" />Node.js</span><span class="ti"><img src="portfolio/icons/nestjs.svg" alt="" loading="lazy" onerror="this.remove()" />NestJS</span><span class="ti"><img src="portfolio/icons/express.svg" alt="" loading="lazy" onerror="this.remove()" />Express</span><span class="ti"><img src="portfolio/icons/laravel.svg" alt="" loading="lazy" onerror="this.remove()" />Laravel</span><span class="ti"><img src="portfolio/icons/symfony.svg" alt="" loading="lazy" onerror="this.remove()" />Symfony</span><span class="ti"><img src="portfolio/icons/django.svg" alt="" loading="lazy" onerror="this.remove()" />Django</span></div>
-      </div>
-      <div class="stack-cat">
-        <div class="cat-label" data-i18n="cat_mobile">Mobile</div>
-        <div class="stack-items"><span class="ti"><img src="portfolio/icons/flutter.svg" alt="" loading="lazy" onerror="this.remove()" />Flutter</span><span class="ti"><img src="portfolio/icons/react.svg" alt="" loading="lazy" onerror="this.remove()" />React Native</span></div>
-      </div>
-      <div class="stack-cat">
-        <div class="cat-label" data-i18n="cat_data">Données &amp; DevOps</div>
-        <div class="stack-items"><span class="ti"><img src="portfolio/icons/postgresql.svg" alt="" loading="lazy" onerror="this.remove()" />PostgreSQL</span><span class="ti"><img src="portfolio/icons/mysql.svg" alt="" loading="lazy" onerror="this.remove()" />MySQL</span><span class="ti"><img src="portfolio/icons/mongodb.svg" alt="" loading="lazy" onerror="this.remove()" />MongoDB</span><span class="ti"><img src="portfolio/icons/docker.svg" alt="" loading="lazy" onerror="this.remove()" />Docker</span><span class="ti">CI/CD</span><span class="ti"><img src="portfolio/icons/gitlab.svg" alt="" loading="lazy" onerror="this.remove()" />GitLab</span><span class="ti"><img src="portfolio/icons/linux.svg" alt="" loading="lazy" onerror="this.remove()" />Linux</span></div>
-      </div>
-    </div>
-    <div class="stack-note reveal">
-      <svg class="stack-note-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-      <div class="sn-body">
-        <span class="sn-tag" data-i18n="stack_note_tag">Toujours en veille</span>
-        <p data-i18n="stack_note">Cette liste n'est pas figée — j'apprends vite et je m'adapte à de nouvelles technologies, langages ou outils selon les besoins du projet.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ============ FORMATION ============ -->
-<section class="section" id="formation" data-screen-label="Formation">
-  <span class="ghost" aria-hidden="true">05</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(05)</span>
-      <span class="label mono" data-i18n="sh_edu_label">Diplômes</span>
-      <h2 data-i18n="sh_edu_title">Formation</h2>
-    </div>
-    <div class="edu-list">
-      <article class="edu reveal">
-        <div>
-          <h3 class="edu-title" data-i18n="edu1_title">Master — Architecte de Système d'Information</h3>
-          <div class="edu-school">ETNA · Développement</div>
-          <p class="edu-detail" data-i18n="edu1_detail">Spécialisation Cloud Computing &amp; Micro-services.</p>
-        </div>
-        <div class="edu-year">2025</div>
-      </article>
-      <article class="edu reveal" style="--d:80ms">
-        <div>
-          <h3 class="edu-title" data-i18n="edu2_title">Baccalauréat</h3>
-          <div class="edu-school">Lycée Lucie Aubrac</div>
-          <p class="edu-detail" data-i18n="edu2_detail">Spécialités Mathématiques, Sciences de l'ingénieur, Physique-Chimie.</p>
-        </div>
-        <div class="edu-year">2021</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LANGUES & INTÉRÊTS ============ -->
-<section class="section" id="more" data-screen-label="Langues & intérêts">
-  <span class="ghost" aria-hidden="true">06</span>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="idx mono">(06)</span>
-      <span class="label mono" data-i18n="sh_more_label">Au-delà du code</span>
-    </div>
-    <div class="li-grid">
-      <div class="li-block reveal">
-        <h3 data-i18n="lang_h">Langues</h3>
-        <div class="lang-row"><span class="l" data-i18n="lang_fr_l">Français</span><span class="lvl" data-i18n="lang_fr_lvl">Natif</span></div>
-      </div>
-      <div class="li-block reveal" style="--d:100ms">
-        <h3 data-i18n="int_h">Centres d'intérêt</h3>
-        <div class="interests">
-          <span class="interest" data-i18n="int_moto">Moto</span>
-          <span class="interest" data-i18n="int_travel">Voyages</span>
-          <span class="interest" data-i18n="int_piano">Piano</span>
-          <span class="interest" data-i18n="int_japan">Culture japonaise</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact" data-screen-label="Contact">
-  <div class="wrap">
-    <div class="contact-lead reveal mono" data-i18n="contact_lead">Travaillons ensemble</div>
-    <h2 class="reveal" data-i18n="contact_h">Parlons de<br />votre projet.</h2>
-    <a class="contact-mail reveal" href="mailto:mohamedelmparis@gmail.com" data-magnetic>
-      <span style="font-size:clamp(22px,3.5vw,44px);font-weight:500;letter-spacing:-0.02em;font-family:var(--font-display)">mohamedelmparis@gmail.com</span>
-      <span class="arrow" style="font-size:clamp(22px,3.5vw,44px)">↗</span>
-    </a>
-    <div class="contact-actions reveal">
-      <a href="portfolio/CV-Mohamed-El-Marzouki.pdf" download class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg><span data-i18n="cta_cv">Télécharger le CV</span></a>
-      <a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
-    </div>
-    <div class="contact-info reveal">
-      <div class="item"><div class="k" data-i18n="ci_phone_k">Téléphone</div><div class="v"><a href="tel:+33767657165">+33 7 67 65 71 65</a></div></div>
-      <div class="item"><div class="k" data-i18n="ci_loc_k">Localisation</div><div class="v" data-i18n="ci_loc_v">Paris, Île-de-France</div></div>
-      <div class="item"><div class="k" data-i18n="ci_li_k">LinkedIn</div><div class="v"><a href="https://linkedin.com/in/mohamed-el-marzouki" target="_blank" rel="noopener">in/mohamed-el-marzouki ↗</a></div></div>
-      <div class="item"><div class="k" data-i18n="ci_avail_k">Disponibilité</div><div class="v" data-i18n="ci_avail_v">Freelance · Missions</div></div>
-    </div>
-  </div>
-</section>
+</div>
 
 <footer class="foot">
-  <span class="mono">© 2026 — Mohamed Anes El Marzouki</span>
-  <span class="mono" data-i18n="foot_role">Full-Stack · Lead</span>
-  <a href="#top" class="to-top" data-i18n="foot_top">Haut de page ↑</a>
+  <span>© 2026 · M.A. EL MARZOUKI · <b>MISSION CONTROL v3</b></span>
+  <span><b id="uptime">UPTIME ∞</b> · ALL SYSTEMS NOMINAL</span>
 </footer>
 
-<!-- ============ CASE STUDY OVERLAY ============ -->
-<div class="case-overlay" id="caseOverlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <button class="btn case-close" id="caseClose" aria-label="Fermer"><span data-i18n="case_close">Fermer</span> ✕</button>
-  <div class="case-scroll" id="caseScroll">
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <article class="case" data-case="logareth">
-      <div class="case-head">
-        <div>
-          <div class="case-kind" data-i18n="p_log_kind">SaaS eSport · Multi-tenant</div>
-          <h2 class="case-title">Logareth</h2>
-        </div>
-        <span class="case-status"><span class="live"></span><span data-i18n="st_flagship">Projet phare</span></span>
-      </div>
-      <div class="case-hero"><image-slot id="cs-logareth-hero" shape="rect" src="portfolio/logareth.png" fit="cover" placeholder="Capture Logareth"></image-slot></div>
-      <div class="case-body">
-        <div class="case-lead">
-          <p data-i18n="cs_log_p1">Logareth est une plateforme SaaS qui réunit les quatre acteurs de l'écosystème eSport — <strong>structures, gamers, prestataires et spectateurs</strong> — sur une même stack. Chaque structure (club ou organisation) y orchestre ses équipes et rosters, ses événements (tournois, scrims, matchs), son fil de publications et sa marketplace de prestations.</p>
-          <p data-i18n="cs_log_p2">L'architecture repose sur des microservices NestJS (authentification/RBAC et domaine structure) isolés derrière une gateway APISIX en forward-auth, avec une isolation multi-tenant par <strong>structure_id</strong> et des rôles auto-générés par structure. Le frontend Next.js 15 (App Router, React 19) adopte une direction artistique cyberpunk eSport.</p>
-        </div>
-        <div class="case-aside">
-          <div>
-            <h4 data-i18n="case_high">Points clés</h4>
-            <ul class="case-high">
-              <li data-i18n="cs_log_h1">Isolation multi-tenant stricte des données par structure_id</li>
-              <li data-i18n="cs_log_h2">Rôles RBAC auto-générés par structure (owner, manager…)</li>
-              <li data-i18n="cs_log_h3">Gateway APISIX en forward-auth devant les microservices</li>
-              <li data-i18n="cs_log_h4">Fil social façon Twitter + marketplace de prestations</li>
-            </ul>
-          </div>
-          <div>
-            <h4 data-i18n="case_info">Infos</h4>
-            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
-            <div class="case-meta-row"><span data-i18n="case_year">Année</span><span>2026</span></div>
-            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_log_type">SaaS multi-tenant</span></div>
-          </div>
-          <div>
-            <h4>Stack</h4>
-            <div class="case-tags"><span class="tag">NestJS 11</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL 17</span><span class="tag">APISIX</span><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">Docker Compose</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
-      <div class="case-gallery">
-        <div class="shot"><image-slot id="cs-logareth-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-        <div class="shot"><image-slot id="cs-logareth-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-      </div>
-    </article>
+  /* ---- i18n ---- */
+  var EN={role:'Full-Stack Developer · Lead',
+    bio:"I design and ship <b>web &amp; mobile</b> applications, from architecture to deployment — focused on <b>performance</b>, <b>security</b> and code quality.",
+    avail:'Available · Freelance', yrs:'yrs', m_years:'Years', m_proj:'Projects', m_tech:'Tech', m_cli:'Clients',
+    learning:'LEARNING mode', open:'open →', term_hint:'TYPE help', cv_k:'Document', cv_v:'Download CV',
+    p_log:'Multi-tenant eSport SaaS — structures, gamers, events. NestJS + APISIX microservices, Next.js 15.',
+    p_vin:'Vinted sourcing via image recognition (CLIP), Playwright scraping, Telegram alerts.',
+    p_ron:'Motorcycle app: GPS rides, offline maps, riding stats and maintenance log. Flutter.',
+    p_oct:'Learn piano on a MIDI keyboard: real-time feedback on accuracy, tempo, rhythm. Web MIDI.'};
+  var orig={}, lang='fr';
+  document.querySelectorAll('[data-i18n]').forEach(function(el,i){el.dataset.k2=i;orig[i]=el.innerHTML;});
+  function applyLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n'),i=el.dataset.k2;
+      el.innerHTML = (lang==='en'&&EN[k])?EN[k]:orig[i];
+    });
+    document.getElementById('langL').textContent=lang.toUpperCase();
+    root.setAttribute('lang',lang);
+  }
+  try{lang=localStorage.getItem('maem_lang')||'fr';}catch(e){}
+  document.getElementById('langBtn').onclick=function(){lang=lang==='en'?'fr':'en';try{localStorage.setItem('maem_lang',lang);}catch(e){}applyLang();};
 
-    <article class="case" data-case="vinbot" hidden>
-      <div class="case-head">
-        <div>
-          <div class="case-kind" data-i18n="p_vin_kind">Sourcing IA · Microservices</div>
-          <h2 class="case-title">VinBOT</h2>
-        </div>
-        <span class="case-status"><span class="live"></span><span data-i18n="st_flagship">Projet phare</span></span>
-      </div>
-      <div class="case-hero"><image-slot id="cs-vinbot-hero" shape="rect" src="portfolio/vinbot.png" fit="cover" placeholder="Capture VinBOT"></image-slot></div>
-      <div class="case-body">
-        <div class="case-lead">
-          <p data-i18n="cs_vin_p1">VinBOT automatise la veille sur Vinted à partir d'une simple <strong>image de référence</strong>. Pour chaque profil de recherche, le bot récupère les annonces via scraping (Playwright), les dédoublonne, puis les compare visuellement à l'image cible grâce à un moteur d'IA local (embeddings CLIP) avec cache PostgreSQL — et n'envoie une alerte Telegram que pour les correspondances réellement pertinentes.</p>
-          <p data-i18n="cs_vin_p2">L'architecture est en microservices NestJS derrière une gateway APISIX (forward-auth) : un service d'authentification (sessions, rôles, superadmin, comptes à mot de passe temporaire par email) et un service métier qui orchestre runs, scoring, stockage d'images (MinIO) et files d'attente (Redis / BullMQ) avec des workers multi-régions.</p>
-        </div>
-        <div class="case-aside">
-          <div>
-            <h4 data-i18n="case_high">Points clés</h4>
-            <ul class="case-high">
-              <li data-i18n="cs_vin_h1">Matching visuel par embeddings CLIP exécutés en local</li>
-              <li data-i18n="cs_vin_h2">Scraping temps réel via Playwright + dédoublonnage</li>
-              <li data-i18n="cs_vin_h3">Workers multi-régions pilotés par Redis / BullMQ</li>
-              <li data-i18n="cs_vin_h4">Alertes Telegram ciblées sur les correspondances pertinentes</li>
-            </ul>
-          </div>
-          <div>
-            <h4 data-i18n="case_info">Infos</h4>
-            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
-            <div class="case-meta-row"><span data-i18n="case_year">Année</span><span>2026</span></div>
-            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_vin_type">Bot + Web App</span></div>
-          </div>
-          <div>
-            <h4>Stack</h4>
-            <div class="case-tags"><span class="tag">NestJS</span><span class="tag">APISIX</span><span class="tag">PostgreSQL 17</span><span class="tag">Redis / BullMQ</span><span class="tag">MinIO</span><span class="tag">Playwright</span><span class="tag">CLIP</span><span class="tag">Next.js</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
-      <div class="case-gallery">
-        <div class="shot"><image-slot id="cs-vinbot-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-        <div class="shot"><image-slot id="cs-vinbot-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-      </div>
-    </article>
+  /* ---- theme ---- */
+  function applyTheme(t){root.setAttribute('data-theme',t);document.getElementById('themeL').textContent=t.toUpperCase();document.querySelector('#themeBtn').firstChild.textContent=t==='dark'?'☾ ':'☀ ';try{localStorage.setItem('maem_theme',t);}catch(e){}}
+  var th='dark';try{th=localStorage.getItem('maem_theme')||'dark';}catch(e){}
+  document.getElementById('themeBtn').onclick=function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');};
 
-    <article class="case" data-case="ronin" hidden>
-      <div class="case-head">
-        <div>
-          <div class="case-kind" data-i18n="p_ron_kind">Mobile · Carnet de route</div>
-          <h2 class="case-title">Rōnin</h2>
-        </div>
-      </div>
-      <div class="case-hero"><image-slot id="cs-ronin-hero" shape="rect" src="portfolio/ronin.png" fit="cover" placeholder="Capture Rōnin"></image-slot></div>
-      <div class="case-body">
-        <div class="case-lead">
-          <p data-i18n="cs_ron_p1">Rōnin est une application mobile pensée pour les motards : chaque sortie est enregistrée en GPS, avec <strong>cartes hors-ligne</strong> et statistiques de roulage détaillées (distance, durée, vitesse moyenne, inclinaison). Un carnet d'entretien suit la mécanique de la moto au fil des kilomètres.</p>
-          <p data-i18n="cs_ron_p2">Construite en Flutter (Dart) avec un backend NestJS et PostgreSQL, l'app synchronise les trajets en temps réel et fonctionne hors connexion grâce à un cache local et des cartes téléchargeables.</p>
-        </div>
-        <div class="case-aside">
-          <div>
-            <h4 data-i18n="case_high">Points clés</h4>
-            <ul class="case-high">
-              <li data-i18n="cs_ron_h1">Enregistrement GPS des trajets en temps réel</li>
-              <li data-i18n="cs_ron_h2">Cartes hors-ligne pour rouler sans réseau</li>
-              <li data-i18n="cs_ron_h3">Statistiques de roulage (distance, inclinaison…)</li>
-              <li data-i18n="cs_ron_h4">Carnet d'entretien moto</li>
-            </ul>
-          </div>
-          <div>
-            <h4 data-i18n="case_info">Infos</h4>
-            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
-            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_ron_type">App mobile</span></div>
-          </div>
-          <div>
-            <h4>Stack</h4>
-            <div class="case-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
-      <div class="case-gallery">
-        <div class="shot"><image-slot id="cs-ronin-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-        <div class="shot"><image-slot id="cs-ronin-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-      </div>
-    </article>
+  /* ---- clock + uptime ---- */
+  var t0=Date.now();
+  function tick(){
+    var d=new Date();
+    document.getElementById('clock').textContent=d.toLocaleTimeString('fr-FR',{hour12:false});
+    var s=Math.floor((Date.now()-t0)/1000);
+    document.getElementById('uptime').textContent='UPTIME '+String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  }
+  setInterval(tick,1000);
 
-    <article class="case" data-case="octave" hidden>
-      <div class="case-head">
-        <div>
-          <div class="case-kind" data-i18n="p_oct_kind">Web · Apprentissage piano</div>
-          <h2 class="case-title">Octave</h2>
-        </div>
-      </div>
-      <div class="case-hero"><image-slot id="cs-octave-hero" shape="rect" src="portfolio/octave.png" fit="cover" placeholder="Capture Octave"></image-slot></div>
-      <div class="case-body">
-        <div class="case-lead">
-          <p data-i18n="cs_oct_p1">Octave est une application web pour apprendre le piano. Branchez un <strong>clavier MIDI</strong> et suivez des exercices interactifs : les notes défilent à l'écran et l'app analyse en temps réel votre jeu (justesse, tempo, rythme), avec un retour immédiat note par note.</p>
-          <p data-i18n="cs_oct_p2">Le frontend Next.js exploite la Web MIDI API pour lire le clavier en direct ; le backend NestJS et PostgreSQL gèrent la progression gamifiée et la bibliothèque de morceaux.</p>
-        </div>
-        <div class="case-aside">
-          <div>
-            <h4 data-i18n="case_high">Points clés</h4>
-            <ul class="case-high">
-              <li data-i18n="cs_oct_h1">Lecture du clavier en direct via la Web MIDI API</li>
-              <li data-i18n="cs_oct_h2">Retour en temps réel : justesse, tempo, rythme</li>
-              <li data-i18n="cs_oct_h3">Progression gamifiée et bibliothèque de morceaux</li>
-              <li data-i18n="cs_oct_h4">Exercices interactifs (gammes, morceaux)</li>
-            </ul>
-          </div>
-          <div>
-            <h4 data-i18n="case_info">Infos</h4>
-            <div class="case-meta-row"><span data-i18n="case_role">Rôle</span><span data-i18n="cs_role_v">Conception &amp; dév</span></div>
-            <div class="case-meta-row"><span data-i18n="case_type">Type</span><span data-i18n="cs_oct_type">App web</span></div>
-          </div>
-          <div>
-            <h4>Stack</h4>
-            <div class="case-tags"><span class="tag">Next.js</span><span class="tag">Web MIDI</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="case-gallery-label" data-i18n="case_more_shots">Plus de captures</div>
-      <div class="case-gallery">
-        <div class="shot"><image-slot id="cs-octave-2" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-        <div class="shot"><image-slot id="cs-octave-3" shape="rect" placeholder="Déposez une capture"></image-slot></div>
-      </div>
-    </article>
+  /* ---- animate gauges + counters when ready ---- */
+  function animate(){
+    document.querySelectorAll('[data-w]').forEach(function(el){el.style.width=el.getAttribute('data-w')+'%';});
+    document.querySelectorAll('.gauge .v[data-to]').forEach(function(el){
+      var to=+el.getAttribute('data-to'),s=el.querySelector('.s'),suf=s?s.outerHTML:'',st=null;
+      function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/900,1);el.innerHTML=Math.round((1-Math.pow(1-p,3))*to)+suf;if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    });
+  }
 
-  </div>
-  <div class="case-nav">
-    <button class="btn" data-case-nav="prev" aria-label="Projet précédent">←</button>
-    <button class="btn" data-case-nav="next" aria-label="Projet suivant">→</button>
-  </div>
-</div>
+  /* ---- heatmap + gps live ---- */
+  function buildExtras(){
+    var heat=document.getElementById('heat');
+    if(heat && !heat.children.length){
+      var cls=['','l1','l2','l3','l4'];
+      for(var w=0;w<52;w++)for(var d=0;d<7;d++){
+        var i=document.createElement('i');var r=Math.random();
+        var lvl=r<.42?0:r<.66?1:r<.84?2:r<.95?3:4;
+        if(lvl)i.className=cls[lvl];
+        heat.appendChild(i);
+      }
+    }
+    var route=document.getElementById('gpsRoute'),dot=document.getElementById('gpsDot'),spd=document.getElementById('gpsSpeed');
+    if(route&&dot){
+      var len=route.getTotalLength();
+      route.style.strokeDasharray=len;route.style.strokeDashoffset=reduce?0:len;
+      var t=0;
+      function gps(){
+        t=(t+0.0016)%1;
+        if(!reduce)route.style.strokeDashoffset=len*(1-Math.min(t*1.4,1));
+        var p=route.getPointAtLength(len*t);dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);
+        if(spd&&Math.random()<.05)spd.textContent=Math.round(58+Math.random()*22);
+        requestAnimationFrame(gps);
+      }
+      if(reduce){dot.setAttribute('cx',route.getPointAtLength(len).x);dot.setAttribute('cy',route.getPointAtLength(len).y);}
+      else requestAnimationFrame(gps);
+    }
+  }
 
-<!-- mount point for tweaks -->
-<div id="tweaks-root"></div>
+  /* ---- terminal ---- */
+  var tout=document.getElementById('tout'), tin=document.getElementById('tin');
+  function pr(h){var d=document.createElement('div');d.innerHTML=h;tout.appendChild(d);tout.scrollTop=tout.scrollHeight;}
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  var CMD={
+    help:function(){pr('<span class="res">commandes: <span class="acc">whoami stack projects experience contact cv theme lang clear</span></span>');},
+    whoami:function(){pr('<span class="res"><b>Mohamed Anes El Marzouki</b> — '+(lang==='en'?'Full-Stack Developer &amp; Lead. 4+ yrs. Paris.':'Développeur Full-Stack &amp; Lead. 4+ ans. Paris.')+'</span>');},
+    stack:function(){pr('<span class="res">TypeScript · React/Next · NestJS · Flutter · PostgreSQL · Docker · <span class="acc">+ '+(lang==='en'?'always learning':'toujours en veille')+'</span></span>');},
+    projects:function(){pr('<span class="res"><b>Logareth</b> · <b>VinBOT</b> · <b>Rōnin</b> · <b>Octave</b> — '+(lang==='en'?'click a mission card to open.':'clique une carte mission pour ouvrir.')+'</span>');},
+    experience:function(){pr('<span class="res">2025 Freelance · 2025 Lead@SoftProces · 2023-25 Eviden/Atos · 2022 Fixers</span>');},
+    contact:function(){pr('<span class="res">mohamedelmparis@gmail.com · in/mohamed-el-marzouki</span>');},
+    cv:function(){pr('<span class="res">→ <a class="acc" href="portfolio/CV-Mohamed-El-Marzouki.pdf" download>CV.pdf</a></span>');},
+    theme:function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');pr('<span class="res">theme → '+root.getAttribute('data-theme')+'</span>');},
+    lang:function(){lang=lang==='en'?'fr':'en';applyLang();pr('<span class="res">lang → '+lang+'</span>');},
+    clear:function(){tout.innerHTML='';},
+    sudo:function(){pr('<span class="er">'+(lang==='en'?"nice try. no root on my motivation 😎":"bien tenté. pas de root sur ma motivation 😎")+'</span>');}
+  };
+  function runCmd(raw){var c=raw.trim();pr('<span class="echo"><span class="tpr"><span class="u">visiteur</span><span class="at">@</span><span class="h">maem</span><span class="d">:</span><span class="pa">~</span><span class="d">$</span></span> '+esc(c)+'</span>');if(!c)return;var n=c.split(/\s+/)[0].toLowerCase();(CMD[n]||function(){pr('<span class="er">'+(lang==='en'?'command not found':'commande introuvable')+': '+esc(n)+'</span><span class="res"> — '+(lang==='en'?'type ':'tape ')+'<span class="acc">help</span></span>');})();}
+  tin.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();var v=tin.value;tin.value='';runCmd(v);}});
+  document.querySelector('.term-screen2').addEventListener('click',function(e){if(!e.target.closest('a'))tin.focus();});
 
-<script src="portfolio/intro.js"></script>
-<script src="portfolio/image-slot.js"></script>
-<script src="portfolio/app.js"></script>
-<script src="portfolio/effects.js"></script>
-<script src="portfolio/i18n.js"></script>
+  /* ---- mission cards → in-page image lightbox ---- */
+  var CASES={
+    logareth:{t:'Logareth',k:'SaaS eSport · multi-tenant',tech:'NestJS · APISIX · PostgreSQL · Next.js 15',c:'var(--accent)',shots:['portfolio/logareth.png','portfolio/logareth-2.png','portfolio/logareth-3.png'],
+      desc:"Plateforme SaaS réunissant structures, gamers, prestataires et spectateurs de l'eSport : équipes, événements, fil social et marketplace, sur une stack microservices isolée par structure.",
+      high:['Isolation multi-tenant par structure_id','Rôles RBAC auto-générés par structure','Gateway APISIX en forward-auth','Fil social + marketplace de prestations'],
+      chips:['NestJS 11','TypeORM','PostgreSQL 17','APISIX','Next.js 15','React 19','Docker']},
+    vinbot:{t:'VinBOT',k:'Sourcing IA · microservices',tech:'NestJS · CLIP · Redis/BullMQ · MinIO',c:'var(--c-cyan)',shots:['portfolio/vinbot.png','portfolio/vinbot-2.png','portfolio/vinbot-3.png'],
+      desc:"Veille automatisée sur Vinted à partir d'une image de référence : matching visuel par embeddings CLIP en local, scraping Playwright et alertes Telegram ciblées.",
+      high:['Matching visuel CLIP exécuté en local','Scraping temps réel + dédoublonnage','Workers multi-régions (Redis/BullMQ)','Alertes Telegram sur correspondances'],
+      chips:['NestJS','APISIX','PostgreSQL','Redis/BullMQ','MinIO','Playwright','CLIP']},
+    ronin:{t:'Rōnin',k:'Mobile · carnet de route',tech:'Flutter · Dart · NestJS · PostgreSQL',c:'var(--c-amber)',shots:['portfolio/ronin.png','portfolio/ronin-2.png','portfolio/ronin-3.png'],
+      desc:"Application moto : chaque sortie enregistrée en GPS, cartes hors-ligne, statistiques de roulage et carnet d'entretien qui prévient au bon kilométrage.",
+      high:['Enregistrement GPS temps réel','Cartes hors-ligne','Stats de roulage (vitesse, inclinaison)',"Carnet d'entretien moto"],
+      chips:['Flutter','Dart','NestJS','PostgreSQL']},
+    octave:{t:'Octave',k:'Web · apprentissage piano',tech:'Next.js · Web MIDI · NestJS',c:'var(--c-violet)',shots:['portfolio/octave.png','portfolio/octave-2.png','portfolio/octave-3.png'],
+      desc:"Apprendre le piano au clavier MIDI : les notes défilent, l'app analyse en temps réel justesse, tempo et rythme, avec progression gamifiée et bibliothèque de morceaux.",
+      high:['Lecture clavier via Web MIDI API','Retour temps réel : justesse, tempo','Progression gamifiée','Bibliothèque de morceaux'],
+      chips:['Next.js','Web MIDI','NestJS','PostgreSQL']}
+  };
+  var lb=document.getElementById('lb'),lbStage=document.getElementById('lbStage'),lbThumbs=document.getElementById('lbThumbs');
+  var lbT=document.getElementById('lbT'),lbK=document.getElementById('lbK'),lbTech=document.getElementById('lbTech');
+  var curCase=null,curImg=0;
+  function lbShow(i){
+    var cc=CASES[curCase];curImg=(i+cc.shots.length)%cc.shots.length;
+    lbStage.style.backgroundImage='url('+cc.shots[curImg]+')';
+    Array.prototype.forEach.call(lbThumbs.children,function(el,idx){el.classList.toggle('on',idx===curImg);});
+  }
+  function openCase(name){
+    curCase=name;var cc=CASES[name];if(!cc)return;
+    lb.style.setProperty('--lc',cc.c);
+    lbT.textContent=cc.t;lbK.textContent=cc.k;lbTech.textContent=cc.tech;
+    document.getElementById('lbDesc').textContent=cc.desc||'';
+    var ul=document.getElementById('lbHigh');ul.innerHTML='';(cc.high||[]).forEach(function(h){var li=document.createElement('li');li.textContent=h;ul.appendChild(li);});
+    var ch=document.getElementById('lbChips');ch.innerHTML='';(cc.chips||[]).forEach(function(c){var s=document.createElement('span');s.textContent=c;ch.appendChild(s);});
+    lbThumbs.innerHTML='';
+    cc.shots.forEach(function(src,idx){var b=document.createElement('button');b.style.backgroundImage='url('+src+')';b.onclick=function(){lbShow(idx);};lbThumbs.appendChild(b);});
+    lbShow(0);lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  }
+  function closeCase(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  document.querySelectorAll('.mc[data-case]').forEach(function(c){
+    c.addEventListener('click',function(){openCase(c.getAttribute('data-case'));});
+  });
+  lb.querySelectorAll('[data-lb-close]').forEach(function(e){e.addEventListener('click',closeCase);});
+  document.getElementById('lbPrev').onclick=function(){lbShow(curImg-1);};
+  document.getElementById('lbNext').onclick=function(){lbShow(curImg+1);};
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeCase();if(e.key==='ArrowRight')lbShow(curImg+1);if(e.key==='ArrowLeft')lbShow(curImg-1);});
+  document.getElementById('cmdkBtn').onclick=function(){tin.focus();tin.scrollIntoView({block:'center'});};
 
-<!-- React + Babel for the Tweaks panel -->
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="portfolio/tweaks-panel.jsx"></script>
-<script type="text/babel" src="portfolio/tweaks.jsx"></script>
-
+  /* ---- boot sequence (cinematic) ---- */
+  var boot=document.getElementById('boot'),bb=document.getElementById('bootBar'),bn=document.getElementById('bootNum');
+  var checksEl=document.getElementById('bootChecks');
+  var CK=[['IDENTITÉ','identity'],['TÉLÉMÉTRIE','telemetry'],['MISSIONS','missions[4]'],['LIAISON GPS','gps-link'],['CANAL COMMS','comms']];
+  CK.forEach(function(c){var d=document.createElement('div');d.className='ck';d.innerHTML='<span class="led"></span>'+c[0]+' <span style="color:var(--faint);margin-left:6px">'+c[1]+'</span><span class="st">OK ✓</span>';checksEl.appendChild(d);});
+  var cks=checksEl.children;
+  function finishBoot(){if(boot.classList.contains('done'))return;boot.classList.add('done');document.body.classList.add('live');applyLang();applyTheme(th);animate();buildExtras();CMD.help();setTimeout(function(){if(boot.parentNode)boot.remove();},650);}
+  setTimeout(finishBoot,5200); /* failsafe: never trap the page */
+  applyLang();applyTheme(th);tick();
+  if(reduce){bn.textContent='100';bb.style.width='100%';for(var j=0;j<cks.length;j++)cks[j].classList.add('on');setTimeout(finishBoot,200);}
+  else{
+    var start=null,dur=2200;
+    function run(ts){
+      if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+      var v=Math.round((1-Math.pow(1-p,2))*100);
+      bn.textContent=v;bb.style.width=v+'%';
+      var lit=Math.floor(p*cks.length+0.001);
+      for(var j=0;j<cks.length;j++)cks[j].classList.toggle('on',j<lit);
+      if(p<1)requestAnimationFrame(run);
+      else{for(var k=0;k<cks.length;k++)cks[k].classList.add('on');setTimeout(finishBoot,420);}
+    }
+    requestAnimationFrame(run);
+  }
+})();
+</script>
 </body>
 </html>
