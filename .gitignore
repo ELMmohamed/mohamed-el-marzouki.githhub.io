@@ -5,3 +5,5 @@
 uploads/
 screenshots/
 mockups/
+.vercel
+.env*
