@@ -81,6 +81,11 @@
   .tg{font-family:var(--mono);font-size:11px;letter-spacing:.06em;border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--dim);}
   .tg .led{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:7px;vertical-align:middle;}
   .idp .glow{position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,color-mix(in oklch,var(--accent) 22%,transparent),transparent 65%);pointer-events:none;}
+  .idp .hero{display:flex;align-items:flex-start;justify-content:space-between;gap:26px;}
+  .idp .face{flex:none;width:132px;height:132px;border-radius:50%;border:2px solid var(--accent);padding:5px;background:color-mix(in oklch,var(--panel-2) 80%,transparent);box-shadow:0 0 46px -16px var(--accent);}
+  .idp .face img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;}
+  @media(max-width:1250px){ .idp h1{font-size:clamp(38px,5vw,60px);} }
+  @media(max-width:600px){ .idp .hero{flex-direction:column-reverse;gap:16px;} .idp .face{width:96px;height:96px;} }
 
   /* metrics gauges */
   .metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -400,14 +405,20 @@
     <section class="panel idp c8 lift">
       <div class="glow"></div>
       <div class="ph"><span class="t">Identité</span><span class="x">UID · MAEM-2026</span></div>
-      <div class="role" data-i18n="role">Développeur Full-Stack · Lead</div>
-      <h1>Mohamed&nbsp;Anes<br><em>El Marzouki</em></h1>
+      <div class="hero">
+        <div>
+          <div class="role" data-i18n="role">Full-Stack Developer · Lead</div>
+          <h1>Mohamed&nbsp;Anes<br><em>El Marzouki</em></h1>
+        </div>
+        <div class="face"><img src="portfolio/portrait.jpg" alt="Portrait de Mohamed Anes El Marzouki" /></div>
+      </div>
       <p class="sub" data-i18n="bio">Je conçois et livre des applications <b>web &amp; mobiles</b>, de l'architecture au déploiement — cap sur la <b>performance</b>, la <b>sécurité</b> et la qualité du code.</p>
       <div class="meta">
-        <span class="tg"><span class="led"></span><span data-i18n="avail">Disponible · Freelance</span></span>
+        <span class="tg"><span class="led"></span><span data-i18n="avail">Disponible · CDI / Freelance</span></span>
         <span class="tg">Paris, FR</span>
         <span class="tg">4+ <span data-i18n="yrs">ans</span></span>
         <span class="tg">FR · AR · EN</span>
+        <span class="tg">Master · Architecte SI</span>
       </div>
     </section>
 
@@ -469,11 +480,11 @@
     <section class="panel c12 lift" style="--pc:var(--c-cyan)">
       <div class="ph"><span class="t" style="--pc:var(--c-cyan)">Parcours · Trajectoire</span><span class="x">2022 → 2026</span></div>
       <div class="tl">
-        <article class="tle"><div class="yr">2025—•</div><h4>Développeur Full-Stack</h4><div class="org">Freelance · Paris</div><p data-i18n="x1">Conception &amp; livraison d'apps web &amp; mobiles full-stack.</p><div class="tt"><span>React</span><span>Next.js</span><span>NestJS</span><span>Flutter</span></div></article>
-        <article class="tle"><div class="yr">2025</div><h4>Lead Developer</h4><div class="org">SoftProces · Paris</div><p data-i18n="x2">Pilotage technique TS, PostgreSQL, Docker, revue de code.</p><div class="tt"><span>TypeScript</span><span>NestJS</span><span>Docker</span></div></article>
-        <article class="tle"><div class="yr">2023—25</div><h4>Formateur Web &amp; Mobile</h4><div class="org">Freelance · IDF</div><p data-i18n="x3">Encadrement d'étudiants, projets pratiques, autonomie.</p><div class="tt"><span>Mentorat</span><span>Web</span><span>Mobile</span></div></article>
-        <article class="tle"><div class="yr">2023—25</div><h4>Dév Full-Stack Mobile</h4><div class="org">Eviden / Atos · Cergy</div><p data-i18n="x4">Messagerie sécurisée Flutter, plugins Java, backend.</p><div class="tt"><span>Flutter</span><span>Kotlin</span><span>Java</span></div></article>
-        <article class="tle"><div class="yr">2022—23</div><h4>Dév Full-Stack Web</h4><div class="org">Fixers · Paris</div><p data-i18n="x5">Back-office Laravel/MySQL, chatbot, analytics.</p><div class="tt"><span>Laravel</span><span>MySQL</span></div></article>
+        <article class="tle"><div class="yr">2025—•</div><h4>Full-Stack Developer</h4><div class="org">Freelance · Paris</div><p data-i18n="x1">Conception &amp; livraison d'apps web &amp; mobiles full-stack.</p><div class="tt"><span>React</span><span>Next.js</span><span>NestJS</span><span>Flutter</span></div></article>
+        <article class="tle"><div class="yr">2025</div><h4>Lead Developer</h4><div class="org">Soft Process · Paris</div><p data-i18n="x2">Pilotage technique TS, PostgreSQL, Docker, revue de code.</p><div class="tt"><span>TypeScript</span><span>NestJS</span><span>Docker</span></div></article>
+        <article class="tle"><div class="yr">2023—25</div><h4>Software Development Trainer</h4><div class="org">Freelance · IDF</div><p data-i18n="x3">Encadrement d'étudiants, projets pratiques, autonomie.</p><div class="tt"><span>Mentorat</span><span>Web</span><span>Mobile</span></div></article>
+        <article class="tle"><div class="yr">2023—25</div><h4>Mobile Software Engineer</h4><div class="org">Eviden / Atos · Cergy</div><p data-i18n="x4">Messagerie sécurisée Flutter, plugins Java, backend.</p><div class="tt"><span>Flutter</span><span>Kotlin</span><span>Java</span></div></article>
+        <article class="tle"><div class="yr">2022—23</div><h4>Full-Stack Developer</h4><div class="org">Fixers · Paris</div><p data-i18n="x5">Back-office Laravel/MySQL, chatbot, analytics.</p><div class="tt"><span>Laravel</span><span>MySQL</span></div></article>
         <article class="tle edu"><div class="yr">2025</div><h4>Master · Architecte SI</h4><div class="org">ETNA</div><p data-i18n="x6">Spécialisation Cloud &amp; Micro-services.</p><div class="tt"><span>Cloud</span><span>Micro-services</span></div></article>
       </div>
     </section>
@@ -511,7 +522,7 @@
       <div class="quotes">
         <div class="q">
           <p data-i18n="q1">« Autonome et rigoureux : il a pris l'archi en main et livré une app stable, dans les temps. »</p>
-          <div class="by">— <b>Lead Tech</b> · SoftProces</div>
+          <div class="by">— <b>Lead Tech</b> · Soft Process</div>
         </div>
         <div class="q">
           <p data-i18n="q2">« Très à l'aise du back au mobile : sur l'app de messagerie sécurisée, du natif solide livré proprement. »</p>
@@ -647,7 +658,7 @@
   /* ---- i18n ---- */
   var EN={role:'Full-Stack Developer · Lead',
     bio:"I design and ship <b>web &amp; mobile</b> applications, from architecture to deployment — focused on <b>performance</b>, <b>security</b> and code quality.",
-    avail:'Available · Freelance', yrs:'yrs', m_years:'Years', m_proj:'Projects', m_tech:'Tech', m_cli:'Clients',
+    avail:'Open · Permanent / Freelance', yrs:'yrs', m_years:'Years', m_proj:'Projects', m_tech:'Tech', m_cli:'Clients',
     learning:'LEARNING mode', open:'open →', term_hint:'TYPE help', cv_k:'Document', cv_v:'Download CV',
     p_log:'Multi-tenant eSport SaaS — structures, gamers, events. NestJS + APISIX microservices, Next.js 15.',
     p_vin:'Vinted sourcing via image recognition (CLIP), Playwright scraping, Telegram alerts.',
@@ -739,10 +750,10 @@
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
   var CMD={
     help:function(){pr('<span class="res">commandes: <span class="acc">whoami stack projects experience contact cv theme lang clear</span></span>');},
-    whoami:function(){pr('<span class="res"><b>Mohamed Anes El Marzouki</b> — '+(lang==='en'?'Full-Stack Developer &amp; Lead. 4+ yrs. Paris.':'Développeur Full-Stack &amp; Lead. 4+ ans. Paris.')+'</span>');},
+    whoami:function(){pr('<span class="res"><b>Mohamed Anes El Marzouki</b> — '+(lang==='en'?'Full-Stack Developer &amp; Lead. 4+ yrs. Paris.':'Full-Stack Developer &amp; Lead. 4+ ans. Paris.')+'</span>');},
     stack:function(){pr('<span class="res">TypeScript · React/Next · NestJS · Flutter · PostgreSQL · Docker · <span class="acc">+ '+(lang==='en'?'always learning':'toujours en veille')+'</span></span>');},
     projects:function(){pr('<span class="res"><b>Logareth</b> · <b>VinBOT</b> · <b>Rōnin</b> · <b>Octave</b> — '+(lang==='en'?'click a mission card to open.':'clique une carte mission pour ouvrir.')+'</span>');},
-    experience:function(){pr('<span class="res">2025 Freelance · 2025 Lead@SoftProces · 2023-25 Eviden/Atos · 2022 Fixers</span>');},
+    experience:function(){pr('<span class="res">2025→ Freelance · 2025 Lead@Soft Process · 2023-25 Trainer · 2023-25 Eviden/Atos · 2022-23 Fixers</span>');},
     contact:function(){pr('<span class="res">mohamedelmparis@gmail.com · in/mohamed-el-marzouki</span>');},
     cv:function(){pr('<span class="res">→ <a class="acc" href="portfolio/CV-Mohamed-El-Marzouki.pdf" download>CV.pdf</a></span>');},
     theme:function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');pr('<span class="res">theme → '+root.getAttribute('data-theme')+'</span>');},
